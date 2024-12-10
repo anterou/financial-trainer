@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="financialapp.MainPage">
+
+    <AbsoluteLayout>
+        <!-- Основной контент -->
+        <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
+                     AbsoluteLayout.LayoutFlags="All"
+                     Padding="20">
+
+            <ImageButton 
+                x:Name="MenuButton"
+                Source="dots.png"
+                HeightRequest="40"
+                WidthRequest="40"
+                HorizontalOptions="Start"
+                Clicked="OnMenuButtonClicked"/>
+
+            <Entry x:Name="MainEntry" 
+                   Placeholder="Введите данные для анализа"
+                   Margin="0,20"/>
+
+            <Button x:Name="AnalyzeButton" 
+                    Text="Анализировать"
+                    Command="{Binding AnalyzeCommand}"
+                    HeightRequest="50"
+                    WidthRequest="200"
+                    Margin="0,10"
+                    Clicked="OnFinancialAnalysisClicked"/>
+
+            <!-- Контейнер для результатов анализа -->
+            <Frame x:Name="ResultsFrame" 
+                   IsVisible="{Binding IsResultsVisible}"
+                   Padding="15"
+                   Margin="0,20">
+                <StackLayout>
+                    <Label Text="Результаты анализа" 
+                           FontSize="18" 
+                           FontAttributes="Bold"/>
+
+                    <Grid Margin="0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Проценты и риски -->
+                        <StackLayout Grid.Column="0">
+                            <Label Text="Процентная ставка: " />
+                            <Label Text="{Binding InterestRate}" />
+                            <Label Text="Степень риска: " />
+                            <Label Text="{Binding RiskLevel}" />
+                        </StackLayout>
+
+                        <!-- Кнопки для подробной информации -->
+                        <StackLayout Grid.Column="1">
+                            <Button Text="Подробные графики"
+                                    Command="{Binding ShowDetailedChartsCommand}"
+                                    Margin="0,5"/>
+                            <Button Text="Анализ рисков"
+                                    Command="{Binding ShowRiskAnalysisCommand}"
+                                    Margin="0,5"/>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+
+        <!-- Полупрозрачный фон для меню -->
+        <BoxView x:Name="MenuBackground"
+                 AbsoluteLayout.LayoutBounds="0,0,1,1"
+                 AbsoluteLayout.LayoutFlags="All"
+                 BackgroundColor="#80000000"
+                 IsVisible="false"
+                 >
+            
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnBackgroundTapped"/>
+                
+            </BoxView.GestureRecognizers>
+        </BoxView>
+
+        <!-- Контекстное меню -->
+        <Frame x:Name="ContextMenu"
+               AbsoluteLayout.LayoutBounds="0,0,250,AutoSize"
+               AbsoluteLayout.LayoutFlags="PositionProportional"
+               BackgroundColor="White"
+               Padding="0"
+               Margin="10,10,0,0"
+               HasShadow="True"
+               IsVisible="false"
+               CornerRadius="10">
+            <StackLayout Spacing="0">
+                <Label Text="Меню" 
+                       FontSize="20" 
+                       FontAttributes="Bold"
+                       Padding="15"/>
+                <Line Height="1" 
+                      BackgroundColor="#e0e0e0"/>
+
+                <Button Text="Финансовый анализ"
+                        Command="{Binding FinancialAnalysisCommand}"
+                        BackgroundColor="Transparent"
+                        TextColor="Black"
+                        Padding="15"/>
+                <Line Height="1" 
+                      BackgroundColor="#e0e0e0"/>
+
+                <Button Text="Исходные данные"
+                        Command="{Binding InitialDataCommand}"
+                        BackgroundColor="Transparent"
+                        TextColor="Black"
+                        Padding="15"/>
+                <Line Height="1" 
+                      BackgroundColor="#e0e0e0"/>
+
+                <Button Text="Графики доходности"
+                        Command="{Binding ProfitChartsCommand}"
+                        BackgroundColor="Transparent"
+                        TextColor="Black"
+                        Padding="15"/>
+            </StackLayout>
+        </Frame>
+    </AbsoluteLayout>
+</ContentPage>
