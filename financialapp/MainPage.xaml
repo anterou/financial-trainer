@@ -1,9 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="financialapp.MainPage">
-
-    <AbsoluteLayout>
+    <ScrollView>
+        <AbsoluteLayout>
         <!-- Основной контент -->
         <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
                      AbsoluteLayout.LayoutFlags="All"
@@ -18,12 +17,14 @@
                 Clicked="OnMenuButtonClicked"/>
 
             <Entry x:Name="MainEntry" 
-                   Placeholder="Введите данные для анализа"
-                   Margin="0,20"/>
+                   Placeholder="Введите желаемую сумму вклада"
+                   Margin="0,10"/>
+            <Entry x:Name="Time"
+                   Placeholder="Введите желаемое время удержания вклада"
+                   Margin="0, 10"/>
 
             <Button x:Name="AnalyzeButton" 
                     Text="Анализировать"
-                    Command="{Binding AnalyzeCommand}"
                     HeightRequest="50"
                     WidthRequest="200"
                     Margin="0,10"
@@ -32,38 +33,14 @@
             <!-- Контейнер для результатов анализа -->
             <Frame x:Name="ResultsFrame" 
                    IsVisible="{Binding IsResultsVisible}"
-                   Padding="15"
-                   Margin="0,20">
-                <StackLayout>
-                    <Label Text="Результаты анализа" 
-                           FontSize="18" 
-                           FontAttributes="Bold"/>
-
-                    <Grid Margin="0,10">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-
-                        <!-- Проценты и риски -->
-                        <StackLayout Grid.Column="0">
-                            <Label Text="Процентная ставка: " />
-                            <Label Text="{Binding InterestRate}" />
-                            <Label Text="Степень риска: " />
-                            <Label Text="{Binding RiskLevel}" />
-                        </StackLayout>
-
-                        <!-- Кнопки для подробной информации -->
-                        <StackLayout Grid.Column="1">
-                            <Button Text="Подробные графики"
-                                    Command="{Binding ShowDetailedChartsCommand}"
-                                    Margin="0,5"/>
-                            <Button Text="Анализ рисков"
-                                    Command="{Binding ShowRiskAnalysisCommand}"
-                                    Margin="0,5"/>
-                        </StackLayout>
+                   Padding="5"
+                   Margin="0,10"
+                   BackgroundColor="LightGray">
+                <ScrollView>
+                    <Grid x:Name="ResultsGrid" Padding="5" BackgroundColor="White" Margin="10,0,0,5">
+                        <!-- Динамическое добавление строк и столбцов будет происходить в коде -->
                     </Grid>
-                </StackLayout>
+                </ScrollView>
             </Frame>
         </StackLayout>
 
@@ -72,12 +49,10 @@
                  AbsoluteLayout.LayoutBounds="0,0,1,1"
                  AbsoluteLayout.LayoutFlags="All"
                  BackgroundColor="#80000000"
-                 IsVisible="false"
-                 >
-            
+                 IsVisible="false">
+
             <BoxView.GestureRecognizers>
                 <TapGestureRecognizer Tapped="OnBackgroundTapped"/>
-                
             </BoxView.GestureRecognizers>
         </BoxView>
 
@@ -100,27 +75,28 @@
                       BackgroundColor="#e0e0e0"/>
 
                 <Button Text="Финансовый анализ"
-                        Command="{Binding FinancialAnalysisCommand}"
                         BackgroundColor="Transparent"
                         TextColor="Black"
-                        Padding="15"/>
+                        Padding="15"
+                        Clicked="OnFinancialAnalysisClicked"/>
                 <Line Height="1" 
                       BackgroundColor="#e0e0e0"/>
 
                 <Button Text="Исходные данные"
-                        Command="{Binding InitialDataCommand}"
                         BackgroundColor="Transparent"
                         TextColor="Black"
-                        Padding="15"/>
+                        Padding="15"
+                        Clicked="OnInitialDataClicked"/>
                 <Line Height="1" 
                       BackgroundColor="#e0e0e0"/>
 
                 <Button Text="Графики доходности"
-                        Command="{Binding ProfitChartsCommand}"
                         BackgroundColor="Transparent"
                         TextColor="Black"
-                        Padding="15"/>
+                        Padding="15"
+                        Clicked="OnProfitChartsClicked"/>
             </StackLayout>
         </Frame>
     </AbsoluteLayout>
+    </ScrollView>
 </ContentPage>
