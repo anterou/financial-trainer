@@ -3,7 +3,7 @@
              x:Class="financialapp.MainPage"
              BackgroundColor="#F5F5F5">
 
-    <Grid RowDefinitions="Auto, *, Auto" Padding="10">
+    <Grid RowDefinitions="Auto, *, Auto" Padding="10" x:Name="gridPrikol">
 
         <!-- Вклады -->
 
@@ -110,13 +110,14 @@
                     <TapGestureRecognizer Tapped="OnCurrencyClicked" />
                 </Frame.GestureRecognizers>
             </Frame>
+            
 
         </Grid>
         
         <!-- Панель с инпутами и кнопкой можно удалить и создать отдельный пейдж -->
         <StackLayout x:Name="InputPanel" Grid.Row="1" Padding="20" Spacing="20" IsVisible="True">
-            <Entry Placeholder="Введите сумму в рублях" Keyboard="Numeric" BackgroundColor="White" TextColor="Black" />
-            <Entry Placeholder="Введите длительность в днях" Keyboard="Numeric" BackgroundColor="White" TextColor="Black" />
+            <Entry x:Name="AmountEntry" Placeholder="Введите сумму в рублях" Keyboard="Numeric" BackgroundColor="White" TextColor="Black" />
+            <Entry x:Name="DurationEntry" Placeholder="Введите длительность в днях" Keyboard="Numeric" BackgroundColor="White" TextColor="Black" />
             <Button Text="Продолжить" BackgroundColor="#6200EE" TextColor="White" Clicked="Button_Clicked" IsEnabled="True" />
         </StackLayout>
         

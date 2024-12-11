@@ -5,11 +5,14 @@ using System.Reflection;
 
 public partial class MainPage : ContentPage
 {
+    View backup = new StackLayout();
+    
     public MainPage()
     {
         InitializeComponent();
         PageTitle.Text = "Анализ инвестиций";
         ShowPanel(nameof(InputPanel));
+        backup = InputPanel;
 
 
     }
@@ -48,11 +51,33 @@ public partial class MainPage : ContentPage
                 return;
             }
 
+            // Получаем значения фильтров
+            int.TryParse(AmountEntry.Text, out int filterAmount);
+            int.TryParse(DurationEntry.Text, out int filterDuration);
+
+            // Преобразуем длительность депозита из строки в дни
+            List<Deposit> filteredDeposits = deposits.Where(deposit =>
+            {
+                int.TryParse(deposit.Period.Split(' ')[0], out int depositDays);
+                bool matchesAmount = filterAmount == 0 || (filterAmount >= deposit.AmountFrom && filterAmount <= deposit.AmountTo);
+                bool matchesDuration = filterDuration == 0 || depositDays >= filterDuration;
+                return matchesAmount && matchesDuration;
+            }).ToList();
+
+            // Проверяем, что есть совпадения после фильтрации
+            if (!filteredDeposits.Any())
+            {
+                await DisplayAlert("Ошибка", "Нет вкладов, соответствующих заданным критериям", "OK");
+                return;
+            }
+
             // Очищаем предыдущие элементы интерфейса
             BankList.Children.Clear();
-
-            // Создаем элементы для каждого депозита
-            foreach (var deposit in deposits)
+            Button backFilter = new Button { Text = "Вернуться к фильтрам поиска банка"};
+            backFilter.Clicked += BackFilter_Clicked;
+            BankList.Children.Add(backFilter);
+            // Создаем элементы для каждого отфильтрованного депозита
+            foreach (var deposit in filteredDeposits)
             {
                 var frame = new Frame
                 {
@@ -75,16 +100,25 @@ public partial class MainPage : ContentPage
                     Text = $"{deposit.AmountFrom:n0} ₽ – {deposit.AmountTo:n0} ₽\n{deposit.Rate}%\n{deposit.Period}",
                     TextColor = Colors.Gray
                 });
-
+                
                 frame.Content = stackLayout;
+                
                 BankList.Children.Add(frame);
+                
             }
+           
         }
         catch (Exception ex)
         {
             // Обработка исключений
             await DisplayAlert("Ошибка", $"Произошла ошибка при загрузке данных: {ex.Message}", "OK");
         }
+    }
+
+    private void BackFilter_Clicked(object? sender, EventArgs e)
+    {
+        InputPanel.IsVisible = true;
+       //gridPrikol.Children.Add(backup);
     }
 
     private async void LoadMutualFundsData()
