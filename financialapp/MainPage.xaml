@@ -18,9 +18,7 @@
         <ScrollView Grid.Row="1">
             <VerticalStackLayout>
                 <VerticalStackLayout x:Name="BankPanel" IsVisible="True">
-                    <Frame x:Name="BankChartFrame" HeightRequest="150" BackgroundColor="White" CornerRadius="20">
-                        <Label Text="График вкладов" HorizontalOptions="Center" VerticalOptions="Center" />
-                    </Frame>
+                    
                     <VerticalStackLayout x:Name="BankList" Spacing="20">
                         
                     </VerticalStackLayout>
@@ -28,9 +26,7 @@
 
                 <!-- Паи -->
                 <VerticalStackLayout x:Name="MutualFundsPanel" IsVisible="False">
-                    <Frame x:Name="MutualFundsChartFrame" HeightRequest="150" BackgroundColor="White" CornerRadius="20">
-                        <Label Text="График паев" HorizontalOptions="Center" VerticalOptions="Center" />
-                    </Frame>
+                    
                     <VerticalStackLayout x:Name="MutualFundsList" Spacing="20">
                         
                     </VerticalStackLayout>
@@ -38,9 +34,7 @@
 
                 <!-- Металлы -->
                 <VerticalStackLayout x:Name="MetalsPanel" IsVisible="False">
-                    <Frame x:Name="MetalsChartFrame" HeightRequest="150" BackgroundColor="White" CornerRadius="20">
-                        <Label Text="График металлов" HorizontalOptions="Center" VerticalOptions="Center"  />
-                    </Frame>
+                    
                     <VerticalStackLayout x:Name="MetalsList" Spacing="20">
                         
                     </VerticalStackLayout>
@@ -48,9 +42,7 @@
 
                 <!-- Валюты -->
                 <VerticalStackLayout x:Name="CurrencyPanel" IsVisible="False">
-                    <Frame x:Name="CurrencyChartFrame" HeightRequest="150" BackgroundColor="White" CornerRadius="20">
-                        <Label Text="График валют" HorizontalOptions="Center" VerticalOptions="Center" />
-                    </Frame>
+                    
                     <VerticalStackLayout x:Name="CurrencyList" Spacing="20">
                         
                     </VerticalStackLayout>
@@ -58,14 +50,19 @@
 
                 <!-- Акции -->
                 <VerticalStackLayout x:Name="SharesPanel" IsVisible="False">
-                    <Frame x:Name="SharesChartFrame" HeightRequest="150" BackgroundColor="White" CornerRadius="20">
-                        <Label Text="График акций" HorizontalOptions="Center" VerticalOptions="Center" />
-                    </Frame>
+                    
                     <VerticalStackLayout x:Name="SharesList" Spacing="20">
                         
                     </VerticalStackLayout>
                 </VerticalStackLayout>
-                
+                <VerticalStackLayout x:Name="PortfolioPanel" IsVisible="False">
+                    <Label Text="Ваш Портфель" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <ScrollView>
+                        <VerticalStackLayout x:Name="PortfolioList" Spacing="20">
+                            <!-- Сюда будут добавляться элементы портфеля -->
+                        </VerticalStackLayout>
+                    </ScrollView>
+                </VerticalStackLayout>
             </VerticalStackLayout>
         </ScrollView>
         <!-- Грид (низ с кнопками) -->
@@ -110,10 +107,17 @@
                     <TapGestureRecognizer Tapped="OnCurrencyClicked" />
                 </Frame.GestureRecognizers>
             </Frame>
-            
+
+            <Frame Grid.Column="5" CornerRadius="10" BackgroundColor="White" WidthRequest="65" HeightRequest="65" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label Text="Портфель" FontAttributes="Bold" TextColor="Black" />
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnPortfolioClicked" />
+                </Frame.GestureRecognizers>
+            </Frame>
 
         </Grid>
-        
+
+
         <!-- Панель с инпутами и кнопкой можно удалить и создать отдельный пейдж -->
         <StackLayout x:Name="InputPanel" Grid.Row="1" Padding="20" Spacing="20" IsVisible="True">
             <Entry x:Name="AmountEntry" Placeholder="Введите сумму в рублях" Keyboard="Numeric" BackgroundColor="White" TextColor="Black" />

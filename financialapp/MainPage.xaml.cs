@@ -6,7 +6,8 @@ using System.Reflection;
 public partial class MainPage : ContentPage
 {
     View backup = new StackLayout();
-    
+    private List<object> PortfolioItems = new List<object>();
+
     public MainPage()
     {
         InitializeComponent();
@@ -73,9 +74,11 @@ public partial class MainPage : ContentPage
 
             // Очищаем предыдущие элементы интерфейса
             BankList.Children.Clear();
-            Button backFilter = new Button { Text = "Вернуться к фильтрам поиска банка"};
+
+            Button backFilter = new Button { Text = "Вернуться к фильтрам поиска банка" };
             backFilter.Clicked += BackFilter_Clicked;
             BankList.Children.Add(backFilter);
+
             // Создаем элементы для каждого отфильтрованного депозита
             foreach (var deposit in filteredDeposits)
             {
@@ -100,19 +103,115 @@ public partial class MainPage : ContentPage
                     Text = $"{deposit.AmountFrom:n0} ₽ – {deposit.AmountTo:n0} ₽\n{deposit.Rate}%\n{deposit.Period}",
                     TextColor = Colors.Gray
                 });
-                
+
+                // Кнопка для добавления в портфель
+                var addButton = new Button
+                {
+                    Text = "Добавить в портфель",
+                    BackgroundColor = Colors.Green,
+                    TextColor = Colors.White
+                };
+
+                addButton.Clicked += (s, e) =>
+                {
+                    AddToPortfolio(deposit);
+                };
+
+                stackLayout.Children.Add(addButton);
                 frame.Content = stackLayout;
-                
                 BankList.Children.Add(frame);
-                
             }
-           
         }
         catch (Exception ex)
         {
             // Обработка исключений
             await DisplayAlert("Ошибка", $"Произошла ошибка при загрузке данных: {ex.Message}", "OK");
         }
+    }
+
+
+    private void LoadPortfolioData()
+    {
+        PortfolioList.Children.Clear();
+
+        if (PortfolioItems.Count == 0)
+        {
+            PortfolioList.Children.Add(new Label
+            {
+                Text = "Ваш портфель пуст",
+                FontSize = 18,
+                TextColor = Colors.Gray,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center
+            });
+            return;
+        }
+      
+        foreach (var item in PortfolioItems)
+        {
+            var frame = new Frame
+            {
+                CornerRadius = 20,
+                Padding = 10,
+                BackgroundColor = Colors.White,
+                Margin = new Thickness(0, 5)
+            };
+
+            var stackLayout = new VerticalStackLayout();
+
+            if (item is Share share)
+            {
+                stackLayout.Children.Add(new Label
+                {
+                    Text = $"{share.Name} ({share.Ticker})",
+                    FontAttributes = FontAttributes.Bold,
+                    FontSize = 18,
+                    TextColor = Colors.Black
+                });
+                
+                stackLayout.Children.Add(new Label
+                {
+                    Text = $"Цена: {share.Price}\nДоходность: {share.AnnualReturn}",
+                    TextColor = Colors.Gray
+                });
+            }
+            else if (item is Deposit deposit)
+            {
+                stackLayout.Children.Add(new Label
+                {
+                    Text = deposit.BankName,
+                    FontAttributes = FontAttributes.Bold,
+                    FontSize = 18,
+                    TextColor = Colors.Black
+                });
+                stackLayout.Children.Add(new Label
+                {
+                    Text = $"{deposit.AmountFrom:n0} ₽ – {deposit.AmountTo:n0} ₽\nСтавка: {deposit.Rate}%\nПериод: {deposit.Period}",
+                    TextColor = Colors.Gray
+                });
+            }
+
+            frame.Content = stackLayout;
+            es
+            PortfolioList.Children.Add(frame);
+        }
+    }
+
+
+
+    private void OnPortfolioClicked(object sender, EventArgs e)
+    {
+        PageTitle.Text = "Портфель";
+        ShowPanel(nameof(PortfolioPanel));
+        LoadPortfolioData(); // Вызывается метод загрузки портфеля
+    }
+
+
+
+    private void AddToPortfolio(object asset)
+    {
+        PortfolioItems.Add(asset);
+        DisplayAlert("Успешно", "Актив добавлен в портфель", "OK");
     }
 
     private void BackFilter_Clicked(object? sender, EventArgs e)
@@ -208,31 +307,25 @@ public partial class MainPage : ContentPage
             // Открываем поток ресурса
             using Stream? stream = assembly.GetManifestResourceStream(resourcePath);
 
-            // Проверяем, что ресурс найден
             if (stream == null)
             {
                 await DisplayAlert("Ошибка", "Ресурс shares.json не найден", "OK");
                 return;
             }
 
-            // Читаем содержимое ресурса
             using StreamReader reader = new StreamReader(stream);
             string jsonContent = await reader.ReadToEndAsync();
 
-            // Десериализуем JSON
             var shares = JsonSerializer.Deserialize<List<Share>>(jsonContent);
 
-            // Проверяем, что данные не пустые
             if (shares == null || shares.Count == 0)
             {
                 await DisplayAlert("Ошибка", "Нет данных для отображения", "OK");
                 return;
             }
 
-            // Очищаем предыдущие элементы интерфейса
             SharesList.Children.Clear();
 
-            // Создаем элементы для каждого объекта акции
             foreach (var share in shares)
             {
                 var frame = new Frame
@@ -257,16 +350,29 @@ public partial class MainPage : ContentPage
                     TextColor = Colors.Gray
                 });
 
+                var addButton = new Button
+                {
+                    Text = "Добавить в портфель",
+                    BackgroundColor = Colors.Green,
+                    TextColor = Colors.White
+                };
+
+                addButton.Clicked += (s, e) =>
+                {
+                    AddToPortfolio(share);
+                };
+
+                stackLayout.Children.Add(addButton);
                 frame.Content = stackLayout;
                 SharesList.Children.Add(frame);
             }
         }
         catch (Exception ex)
         {
-            // Обработка исключений
             await DisplayAlert("Ошибка", $"Произошла ошибка при загрузке данных: {ex.Message}", "OK");
         }
     }
+
 
     private async void LoadCurrencyData()
     {
@@ -482,8 +588,10 @@ public partial class MainPage : ContentPage
         MutualFundsPanel.IsVisible = panelName == nameof(MutualFundsPanel);
         CurrencyPanel.IsVisible = panelName == nameof(CurrencyPanel);
         MetalsPanel.IsVisible = panelName == nameof(MetalsPanel);
+        PortfolioPanel.IsVisible = panelName == nameof(PortfolioPanel); // Проверить имя панели
         InputPanel.IsVisible = panelName == nameof(InputPanel);
     }
+
 
     private void Button_Clicked(object sender, EventArgs e)
     {
