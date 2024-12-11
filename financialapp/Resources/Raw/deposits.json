@@ -1,74 +1,1213 @@
 [
   {
     "BankName": "Банк ДОМ.РФ",
-    "Rate": "23,00%",
+    "Rate": 23.00,
     "Period": "181 дн.",
-    "Amount": "10 000 — 15 млн ₽"
+    "AmountFrom": 10000,
+    "AmountTo": 15000000
   },
   {
     "BankName": "Банк ТКБ",
-    "Rate": "23,00%",
+    "Rate": 23.00,
     "Period": "181 дн.",
-    "Amount": "100 000 — 3 млн ₽"
+    "AmountFrom": 100000,
+    "AmountTo": 3000000
   },
   {
     "BankName": "Локо-Банк",
-    "Rate": "22,50%",
+    "Rate": 22.50,
     "Period": "370 дн.",
-    "Amount": "300 000 — 50 млн ₽"
+    "AmountFrom": 300000,
+    "AmountTo": 50000000
   },
   {
     "BankName": "КАМКОМБАНК",
-    "Rate": "22,50%",
+    "Rate": 22.50,
     "Period": "186 дн.",
-    "Amount": "10 000 — 10 млн ₽"
+    "AmountFrom": 10000,
+    "AmountTo": 10000000
   },
   {
     "BankName": "Свой Банк",
-    "Rate": "23,00%",
+    "Rate": 23.00,
     "Period": "181 дн.",
-    "Amount": "30 000 — 30 млн ₽"
+    "AmountFrom": 30000,
+    "AmountTo": 30000000
   },
   {
     "BankName": "Сбербанк",
-    "Rate": "до 21,00%",
+    "Rate": 21.00,
     "Period": "30 — 1095 дн.",
-    "Amount": "от 100 000 ₽"
-  },
-  {
-    "BankName": "Московский кредитный банк (МКБ)",
-    "Rate": "до 25,00%",
-    "Period": "95 — 1100 дн.",
-    "Amount": "10 000 — 3 млн ₽"
+    "AmountFrom": 100000,
+    "AmountTo": 100000
   },
   {
     "BankName": "МТС Банк",
-    "Rate": "до 23,06%",
+    "Rate": 23.06,
     "Period": "91 — 1096 дн.",
-    "Amount": "от 10 000 ₽"
+    "AmountFrom": 10000,
+    "AmountTo": 10000
   },
   {
     "BankName": "Газпромбанк",
-    "Rate": "до 24,00%",
+    "Rate": 24.00,
     "Period": "1 — 61 дн.",
-    "Amount": "1 — 1,50 млн ₽"
+    "AmountFrom": 1,
+    "AmountTo": 150000000
   },
   {
     "BankName": "Т-Банк",
-    "Rate": "до 24,13%",
+    "Rate": 24.13,
     "Period": "61 — 730 дн.",
-    "Amount": "от 50 000 ₽"
+    "AmountFrom": 50000,
+    "AmountTo": 50000
   },
   {
     "BankName": "ВТБ",
-    "Rate": "до 24,00%",
+    "Rate": 24.00,
     "Period": "1 — 91 дн.",
-    "Amount": "1000 — 1 млн ₽"
+    "AmountFrom": 1000,
+    "AmountTo": 1000000
+  },
+  {
+    "BankName": "Уралсиб",
+    "Rate": 25.00,
+    "Period": "91 — 1100 дн.",
+    "AmountFrom": 100000,
+    "AmountTo": 1000000000
   },
   {
     "BankName": "Примсоцбанк",
-    "Rate": "23,80%",
+    "Rate": 23.80,
     "Period": "122 дн.",
-    "Amount": "от 10 000 ₽"
+    "AmountFrom": 10000,
+    "AmountTo": 10000
+  },
+  {
+    "BankName": "НС Банк",
+    "Rate": 20.50,
+    "Period": "400 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 3000000
+  },
+  {
+    "BankName": "Банк Синара",
+    "Rate": 15.50,
+    "Period": "180 дн.",
+    "AmountFrom": 10000,
+    "AmountTo": 3000000
+  },
+  {
+    "BankName": "КАМКОМБАНК",
+    "Rate": 22.50,
+    "Period": "186 — 280 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "СДМ-Банк",
+    "Rate": 23.40,
+    "Period": "181 — 367 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "Альфа-Банк",
+    "Rate": 22.02,
+    "Period": "92 — 1095 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "Яндекс Банк",
+    "Rate": 22.00,
+    "Period": "91 — 730 дн.",
+    "AmountFrom": 10000,
+    "AmountTo": 10000000
+  },
+  {
+    "BankName": "Ингосстрах Банк",
+    "Rate": 23.10,
+    "Period": "181 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "Россельхозбанк",
+    "Rate": 24.00,
+    "Period": "91 — 1095 дн.",
+    "AmountFrom": 5000,
+    "AmountTo": 5000
+  },
+  {
+    "BankName": "Кредит Европа Банк",
+    "Rate": 21.00,
+    "Period": "91 — 1098 дн.",
+    "AmountFrom": 100000,
+    "AmountTo": 100000
+  },
+  {
+    "BankName": "МОРСКОЙ БАНК",
+    "Rate": 22.25,
+    "Period": "181 дн.",
+    "AmountFrom": 500000,
+    "AmountTo": 500000
+  },
+  {
+    "BankName": "Московский кредитный банк (МКБ)",
+    "Rate": 25.00,
+    "Period": "95 — 1100 дн.",
+    "AmountFrom": 10000,
+    "AmountTo": 3000000
+  },
+  {
+    "BankName": "Банк ФИНАМ",
+    "Rate": 22.00,
+    "Period": "30 — 61 дн.",
+    "AmountFrom": 1,
+    "AmountTo": 150000000
+  },
+  {
+    "BankName": "ПСБ",
+    "Rate": 30.00,
+    "Period": "91 — 367 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "Металлинвестбанк",
+    "Rate": 25.00,
+    "Period": "31 — 1100 дн.",
+    "AmountFrom": 100000,
+    "AmountTo": 100000
+  },
+  {
+    "BankName": "Гарант-Инвест",
+    "Rate": 25.00,
+    "Period": "181 — 370 дн.",
+    "AmountFrom": 3000000,
+    "AmountTo": 3000000
+  },
+  {
+    "BankName": "Таврический Банк",
+    "Rate": 24.70,
+    "Period": "91 — 1095 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "Банк «Санкт-Петербург»",
+    "Rate": 24.50,
+    "Period": "31 — 1092 дн.",
+    "AmountFrom": 10000,
+    "AmountTo": 1000000
+  },
+  {
+    "BankName": "БыстроБанк",
+    "Rate": 24.50,
+    "Period": "1830 — 1840 дн.",
+    "AmountFrom": 10000,
+    "AmountTo": 5000000
+  },
+  {
+    "BankName": "Инвестторгбанк",
+    "Rate": 24.25,
+    "Period": "91 — 370 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "Александровский",
+    "Rate": 24.00,
+    "Period": "91 — 735 дн.",
+    "AmountFrom": 5000,
+    "AmountTo": 5000
+  },
+  {
+    "BankName": "Абсолют Банк",
+    "Rate": 24.00,
+    "Period": "92 — 368 дн.",
+    "AmountFrom": 10000,
+    "AmountTo": 3000000
+  },
+  {
+    "BankName": "Азиатско-Тихоокеанский банк (АТБ)",
+    "Rate": 24.00,
+    "Period": "62 — 1098 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "Кубань Кредит",
+    "Rate": 24.00,
+    "Period": "91 — 545 дн.",
+    "AmountFrom": 5000,
+    "AmountTo": 5000
+  },
+  {
+    "BankName": "Еврофинанс Моснарбанк",
+    "Rate": 24.00,
+    "Period": "30 — 365 дн.",
+    "AmountFrom": 30000,
+    "AmountTo": 30000
+  },
+  {
+    "BankName": "Банк МФК",
+    "Rate": 23.80,
+    "Period": "91 — 730 дн.",
+    "AmountFrom": 100000,
+    "AmountTo": 100000
+  },
+  {
+    "BankName": "Совкомбанк",
+    "Rate": 23.60,
+    "Period": "90 — 1095 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "Ренессанс Банк",
+    "Rate": 23.50,
+    "Period": "61 — 1080 дн.",
+    "AmountFrom": 5000,
+    "AmountTo": 5000
+  },
+  {
+    "BankName": "ББР Банк",
+    "Rate": 23.50,
+    "Period": "30 — 61 дн.",
+    "AmountFrom": 10000,
+    "AmountTo": 10000
+  },
+  {
+    "BankName": "Норвик Банк",
+    "Rate": 24.19,
+    "Period": "183 дн.",
+    "AmountFrom": 100000,
+    "AmountTo": 50000000
+  },
+  {
+    "BankName": "Ozon Банк",
+    "Rate": 23.00,
+    "Period": "30 — 61 дн.",
+    "AmountFrom": 1,
+    "AmountTo": 1
+  },
+  {
+    "BankName": "Почта Банк",
+    "Rate": 23.00,
+    "Period": "91 — 275 дн.",
+    "AmountFrom": 10000,
+    "AmountTo": 150000000
+  },
+  {
+    "BankName": "Тимер Банк",
+    "Rate": 23.00,
+    "Period": "181 дн.",
+    "AmountFrom": 10000,
+    "AmountTo": 20000000
+  },
+  {
+    "BankName": "Банк Акцепт",
+    "Rate": 23.00,
+    "Period": "120 — 181 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "РостФинанс",
+    "Rate": 23.00,
+    "Period": "65 — 375 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "Банк ПТБ",
+    "Rate": 23.00,
+    "Period": "185 — 370 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "БАНК НБС",
+    "Rate": 23.00,
+    "Period": "181 дн.",
+    "AmountFrom": 100000,
+    "AmountTo": 100000
+  },
+  {
+    "BankName": "Мир Бизнес Банк",
+    "Rate": 23.00,
+    "Period": "31 — 181 дн.",
+    "AmountFrom": 100000,
+    "AmountTo": 100000
+  },
+  {
+    "BankName": "Реалист Банк",
+    "Rate": 24.12,
+    "Period": "91 — 181 дн.",
+    "AmountFrom": 100000,
+    "AmountTo": 5000000
+  },
+  {
+    "BankName": "Русский Стандарт",
+    "Rate": 23.00,
+    "Period": "100 — 275 дн.",
+    "AmountFrom": 100000,
+    "AmountTo": 100000
+  },
+  {
+    "BankName": "Белгородсоцбанк",
+    "Rate": 23.00,
+    "Period": "181 дн.",
+    "AmountFrom": 1000000,
+    "AmountTo": 1000000
+  },
+  {
+    "BankName": "Банк Национальный стандарт",
+    "Rate": 23.00,
+    "Period": "31 — 360 дн.",
+    "AmountFrom": 30000,
+    "AmountTo": 30000
+  },
+  {
+    "BankName": "ВБРР",
+    "Rate": 24.36,
+    "Period": "31 — 1096 дн.",
+    "AmountFrom": 10000000,
+    "AmountTo": 10000000
+  },
+  {
+    "BankName": "Банк Жилищного Финансирования",
+    "Rate": 24.10,
+    "Period": "190 дн.",
+    "AmountFrom": 30000,
+    "AmountTo": 30000
+  },
+  {
+    "BankName": "БКС Банк",
+    "Rate": 22.90,
+    "Period": "180 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "Банк «Солидарность»",
+    "Rate": 22.81,
+    "Period": "181 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "ЦМРБанк",
+    "Rate": 22.80,
+    "Period": "91 — 367 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "МБ РУС Банк",
+    "Rate": 22.75,
+    "Period": "181 — 1098 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 10000000
+  },
+  {
+    "BankName": "НОВИКОМ",
+    "Rate": 22.70,
+    "Period": "91 — 1100 дн.",
+    "AmountFrom": 350000000,
+    "AmountTo": 350000000
+  },
+  {
+    "BankName": "Газэнергобанк",
+    "Rate": 22.60,
+    "Period": "90 — 1080 дн.",
+    "AmountFrom": 10000,
+    "AmountTo": 30000000
+  },
+  {
+    "BankName": "РУСНАРБАНК",
+    "Rate": 22.57,
+    "Period": "400 дн.",
+    "AmountFrom": 10000,
+    "AmountTo": 10000
+  },
+  {
+    "BankName": "Солид Банк",
+    "Rate": 22.50,
+    "Period": "91 дн.",
+    "AmountFrom": 30000,
+    "AmountTo": 5000000
+  },
+  {
+    "BankName": "Банк Глобус",
+    "Rate": 22.50,
+    "Period": "61 — 181 дн.",
+    "AmountFrom": 30000,
+    "AmountTo": 30000
+  },
+  {
+    "BankName": "Москоммерцбанк",
+    "Rate": 22.50,
+    "Period": "31 — 730 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "Банк «АГОРА»",
+    "Rate": 22.50,
+    "Period": "91 — 181 дн.",
+    "AmountFrom": 100000,
+    "AmountTo": 100000
+  },
+  {
+    "BankName": "АКИБАНК",
+    "Rate": 22.50,
+    "Period": "185 дн.",
+    "AmountFrom": 100000,
+    "AmountTo": 5000000
+  },
+  {
+    "BankName": "Банк «Приморье»",
+    "Rate": 22.50,
+    "Period": "31 — 1095 дн.",
+    "AmountFrom": 1000000,
+    "AmountTo": 1000000
+  },
+  {
+    "BankName": "Первый Инвестиционный Банк",
+    "Rate": 22.50,
+    "Period": "270 — 365 дн.",
+    "AmountFrom": 5000000,
+    "AmountTo": 50000000
+  },
+  {
+    "BankName": "Уральский банк реконструкции и развития (УБРиР)",
+    "Rate": 22.00,
+    "Period": "30 — 122 дн.",
+    "AmountFrom": 1,
+    "AmountTo": 150000000
+  },
+  {
+    "BankName": "Банк «Пойдём!»",
+    "Rate": 22.00,
+    "Period": "182 дн.",
+    "AmountFrom": 10000,
+    "AmountTo": 10000
+  },
+  {
+    "BankName": "Росбанк",
+    "Rate": 23.03,
+    "Period": "91 — 365 дн.",
+    "AmountFrom": 15000,
+    "AmountTo": 300000000
+  },
+  {
+    "BankName": "ГЕНБАНК",
+    "Rate": 22.00,
+    "Period": "31 — 1095 дн.",
+    "AmountFrom": 30000,
+    "AmountTo": 30000
+  },
+  {
+    "BankName": "Банк ЗЕНИТ",
+    "Rate": 22.00,
+    "Period": "181 — 367 дн.",
+    "AmountFrom": 30000,
+    "AmountTo": 30000
+  },
+  {
+    "BankName": "Банк Казани",
+    "Rate": 22.00,
+    "Period": "91 — 367 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "СЕВЕРГАЗБАНК",
+    "Rate": 23.69,
+    "Period": "91 — 1095 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "Алеф-Банк",
+    "Rate": 22.00,
+    "Period": "183 — 363 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "Зираат Банк",
+    "Rate": 22.00,
+    "Period": "31 — 1095 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "Национальный Резервный Банк",
+    "Rate": 23.04,
+    "Period": "31 — 1100 дн.",
+    "AmountFrom": 10000000,
+    "AmountTo": 10000000
+  },
+  {
+    "BankName": "Фора-Банк",
+    "Rate": 21.60,
+    "Period": "31 — 730 дн.",
+    "AmountFrom": 5000,
+    "AmountTo": 5000
+  },
+  {
+    "BankName": "Дальневосточный Банк",
+    "Rate": 21.50,
+    "Period": "1 — 61 дн.",
+    "AmountFrom": 10000,
+    "AmountTo": 10000
+  },
+  {
+    "BankName": "Энерготрансбанк",
+    "Rate": 21.50,
+    "Period": "181 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "Банк «РОССИЯ»",
+    "Rate": 21.50,
+    "Period": "1095 дн.",
+    "AmountFrom": 100000,
+    "AmountTo": 5000000
+  },
+  {
+    "BankName": "Тендербанк",
+    "Rate": 21.50,
+    "Period": "91 дн.",
+    "AmountFrom": 500000,
+    "AmountTo": 500000
+  },
+  {
+    "BankName": "Внешфинбанк",
+    "Rate": 21.50,
+    "Period": "92 дн.",
+    "AmountFrom": 150000000,
+    "AmountTo": 50000000
+  },
+  {
+    "BankName": "РосДорБанк",
+    "Rate": 21.50,
+    "Period": "92 дн.",
+    "AmountFrom": 100000,
+    "AmountTo": 150000000
+  },
+  {
+    "BankName": "Экспобанк",
+    "Rate": 22.31,
+    "Period": "181 дн.",
+    "AmountFrom": 100000,
+    "AmountTo": 10000000
+  },
+  {
+    "BankName": "Ак Барс Банк",
+    "Rate": 21.25,
+    "Period": "91 дн.",
+    "AmountFrom": 10000,
+    "AmountTo": 5000000
+  },
+  {
+    "BankName": "Ишбанк",
+    "Rate": 21.25,
+    "Period": "367 дн.",
+    "AmountFrom": 10000,
+    "AmountTo": 10000
+  },
+  {
+    "BankName": "ПЕРЕСВЕТ",
+    "Rate": 21.15,
+    "Period": "91 дн.",
+    "AmountFrom": 30000,
+    "AmountTo": 30000
+  },
+  {
+    "BankName": "Урал ФД",
+    "Rate": 21.93,
+    "Period": "181 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "Газтрансбанк",
+    "Rate": 21.00,
+    "Period": "181 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "ЕВРОАЛЬЯНС",
+    "Rate": 21.00,
+    "Period": "1096 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "Нацинвестпромбанк",
+    "Rate": 21.00,
+    "Period": "91 — 367 дн.",
+    "AmountFrom": 100000,
+    "AmountTo": 2000000
+  },
+  {
+    "BankName": "НОКССБАНК",
+    "Rate": 28.91,
+    "Period": "730 — 1095 дн.",
+    "AmountFrom": 5000000,
+    "AmountTo": 5000000
+  },
+  {
+    "BankName": "Банк «АГРОПРОМКРЕДИТ»",
+    "Rate": 21.00,
+    "Period": "91 — 1100 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "Живаго банк",
+    "Rate": 20.90,
+    "Period": "31 — 365 дн.",
+    "AmountFrom": 10000,
+    "AmountTo": 10000
+  },
+  {
+    "BankName": "РНКБ",
+    "Rate": 22.90,
+    "Period": "91 — 1095 дн.",
+    "AmountFrom": 1000,
+    "AmountTo": 1000
+  },
+  {
+    "BankName": "Саммит Банк",
+    "Rate": 20.80,
+    "Period": "35 — 185 дн.",
+    "AmountFrom": 15000,
+    "AmountTo": 15000
+  },
+  {
+    "BankName": "Углеметбанк",
+    "Rate": 20.59,
+    "Period": "91 — 200 дн.",
+    "AmountFrom": 5000,
+    "AmountTo": 5000
+  },
+  {
+    "BankName": "Интерпрогрессбанк",
+    "Rate": 22.60,
+    "Period": "367 дн.",
+    "AmountFrom": 5000000,
+    "AmountTo": 5000000
+  },
+  {
+    "BankName": "БАНК КОСМОС",
+    "Rate": 20.50,
+    "Period": "185 дн.",
+    "AmountFrom": 30000,
+    "AmountTo": 30000
+  },
+  {
+    "BankName": "Банк «ПСКБ»",
+    "Rate": 20.50,
+    "Period": "90 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "Трансстройбанк",
+    "Rate": 22.54,
+    "Period": "365 дн.",
+    "AmountFrom": 100000,
+    "AmountTo": 100000
+  },
+  {
+    "BankName": "ОТП Банк",
+    "Rate": 20.50,
+    "Period": "91 — 732 дн.",
+    "AmountFrom": 1000,
+    "AmountTo": 600000000
+  },
+  {
+    "BankName": "Далена Банк",
+    "Rate": 20.50,
+    "Period": "181 дн.",
+    "AmountFrom": 150000000,
+    "AmountTo": 150000000
+  },
+  {
+    "BankName": "банк Раунд",
+    "Rate": 21.28,
+    "Period": "60 — 548 дн.",
+    "AmountFrom": 100000,
+    "AmountTo": 100000
+  },
+  {
+    "BankName": "ПроБанк",
+    "Rate": 20.34,
+    "Period": "30 — 1094 дн.",
+    "AmountFrom": 1,
+    "AmountTo": 1
+  },
+  {
+    "BankName": "Северный Народный Банк",
+    "Rate": 20.25,
+    "Period": "180 дн.",
+    "AmountFrom": 100000,
+    "AmountTo": 100000
+  },
+  {
+    "BankName": "Москва-Сити",
+    "Rate": 20.20,
+    "Period": "181 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "СИНКО-БАНК",
+    "Rate": 20.10,
+    "Period": "30 — 730 дн.",
+    "AmountFrom": 1000000,
+    "AmountTo": 1000000
+  },
+  {
+    "BankName": "Крокус-Банк",
+    "Rate": 20.05,
+    "Period": "180 дн.",
+    "AmountFrom": 100000,
+    "AmountTo": 100000
+  },
+  {
+    "BankName": "КОШЕЛЕВ-БАНК",
+    "Rate": 20.00,
+    "Period": "370 — 730 дн.",
+    "AmountFrom": 1000,
+    "AmountTo": 1000
+  },
+  {
+    "BankName": "Муниципальный Камчатпрофитбанк",
+    "Rate": 20.00,
+    "Period": "91 — 182 дн.",
+    "AmountFrom": 10000,
+    "AmountTo": 10000
+  },
+  {
+    "BankName": "Кредит Урал Банк",
+    "Rate": 20.00,
+    "Period": "181 — 367 дн.",
+    "AmountFrom": 30000,
+    "AmountTo": 30000
+  },
+  {
+    "BankName": "Агророс Банк",
+    "Rate": 20.00,
+    "Period": "91 дн.",
+    "AmountFrom": 100000,
+    "AmountTo": 100000
+  },
+  {
+    "BankName": "МЕТКОМБАНК",
+    "Rate": 20.84,
+    "Period": "181 — 370 дн.",
+    "AmountFrom": 100000,
+    "AmountTo": 100000
+  },
+  {
+    "BankName": "Цифра банк",
+    "Rate": 24.35,
+    "Period": "730 дн.",
+    "AmountFrom": 100000,
+    "AmountTo": 15000000
+  },
+  {
+    "BankName": "Банк НООСФЕРА",
+    "Rate": 20.00,
+    "Period": "31 — 366 дн.",
+    "AmountFrom": 5000,
+    "AmountTo": 5000000
+  },
+  {
+    "BankName": "МОСКОМБАНК",
+    "Rate": 20.00,
+    "Period": "31 — 364 дн.",
+    "AmountFrom": 30000,
+    "AmountTo": 30000
+  },
+  {
+    "BankName": "Банк «ЦентроКредит»",
+    "Rate": 20.00,
+    "Period": "31 — 370 дн.",
+    "AmountFrom": 10000000,
+    "AmountTo": 10000000
+  },
+  {
+    "BankName": "Развитие-Столица",
+    "Rate": 20.00,
+    "Period": "31 дн.",
+    "AmountFrom": 50000000,
+    "AmountTo": 50000000
+  },
+  {
+    "BankName": "ФИНСТАР БАНК",
+    "Rate": 19.50,
+    "Period": "91 — 367 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 300000000
+  },
+  {
+    "BankName": "Владбизнесбанк",
+    "Rate": 25.68,
+    "Period": "1095 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "Банк Финсервис",
+    "Rate": 19.50,
+    "Period": "93 — 183 дн.",
+    "AmountFrom": 100000,
+    "AmountTo": 100000
+  },
+  {
+    "BankName": "Инбанк",
+    "Rate": 21.17,
+    "Period": "31 — 1096 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "ИК Банк",
+    "Rate": 19.01,
+    "Period": "31 — 372 дн.",
+    "AmountFrom": 5000,
+    "AmountTo": 5000
+  },
+  {
+    "BankName": "Банк РМП",
+    "Rate": 19.00,
+    "Period": "31 — 365 дн.",
+    "AmountFrom": 100000,
+    "AmountTo": 100000
+  },
+  {
+    "BankName": "Банк «Дружба»",
+    "Rate": 25.35,
+    "Period": "366 — 1096 дн.",
+    "AmountFrom": 3000000,
+    "AmountTo": 3000000
+  },
+  {
+    "BankName": "Капитал",
+    "Rate": 19.00,
+    "Period": "31 — 364 дн.",
+    "AmountFrom": 5000000,
+    "AmountTo": 5000000
+  },
+  {
+    "BankName": "Россита-Банк",
+    "Rate": 20.75,
+    "Period": "30 — 365 дн.",
+    "AmountFrom": 100000,
+    "AmountTo": 100000
+  },
+  {
+    "BankName": "ГУТА-БАНК",
+    "Rate": 19.00,
+    "Period": "7 дн.",
+    "AmountFrom": 50000000,
+    "AmountTo": 50000000
+  },
+  {
+    "BankName": "Банк РСИ",
+    "Rate": 19.00,
+    "Period": "1 — 30 дн.",
+    "AmountFrom": 70000000,
+    "AmountTo": 70000000
+  },
+  {
+    "BankName": "Ланта-Банк",
+    "Rate": 19.00,
+    "Period": "61 дн.",
+    "AmountFrom": 100000000,
+    "AmountTo": 100000000
+  },
+  {
+    "BankName": "Банк «Новый век»",
+    "Rate": 18.75,
+    "Period": "31 — 180 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "НК Банк",
+    "Rate": 18.75,
+    "Period": "30 — 545 дн.",
+    "AmountFrom": 500000,
+    "AmountTo": 500000
+  },
+  {
+    "BankName": "Банк «Мир Привилегий»",
+    "Rate": 18.50,
+    "Period": "185 — 370 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "Тольяттихимбанк",
+    "Rate": 18.50,
+    "Period": "91 дн.",
+    "AmountFrom": 100000,
+    "AmountTo": 100000
+  },
+  {
+    "BankName": "Сургутнефтегазбанк",
+    "Rate": 18.10,
+    "Period": "31 — 91 дн.",
+    "AmountFrom": 10000,
+    "AmountTo": 10000
+  },
+  {
+    "BankName": "Автоторгбанк",
+    "Rate": 18.00,
+    "Period": "181 — 367 дн.",
+    "AmountFrom": 30000,
+    "AmountTo": 30000
+  },
+  {
+    "BankName": "НДБанк",
+    "Rate": 18.00,
+    "Period": "91 — 360 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "СОЦИУМ-БАНК",
+    "Rate": 19.59,
+    "Period": "185 — 370 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "Банк «Держава»",
+    "Rate": 18.00,
+    "Period": "31 — 365 дн.",
+    "AmountFrom": 1,
+    "AmountTo": 1
+  },
+  {
+    "BankName": "Русьуниверсалбанк",
+    "Rate": 18.69,
+    "Period": "91 — 182 дн.",
+    "AmountFrom": 75000000,
+    "AmountTo": 75000000
+  },
+  {
+    "BankName": "Авангард",
+    "Rate": 17.50,
+    "Period": "10 — 367 дн.",
+    "AmountFrom": 10000,
+    "AmountTo": 10000
+  },
+  {
+    "BankName": "ТАТСОЦБАНК",
+    "Rate": 17.00,
+    "Period": "60 дн.",
+    "AmountFrom": 1000,
+    "AmountTo": 1000
+  },
+  {
+    "BankName": "Банк «СЕРВИС РЕЗЕРВ»",
+    "Rate": 17.00,
+    "Period": "31 — 40 дн.",
+    "AmountFrom": 10000,
+    "AmountTo": 10000
+  },
+  {
+    "BankName": "Банк «СЛАВИЯ»",
+    "Rate": 17.00,
+    "Period": "91 — 364 дн.",
+    "AmountFrom": 700000,
+    "AmountTo": 700000
+  },
+  {
+    "BankName": "СПБ Банк",
+    "Rate": 17.12,
+    "Period": "31 — 365 дн.",
+    "AmountFrom": 150000000,
+    "AmountTo": 150000000
+  },
+  {
+    "BankName": "Форштадт",
+    "Rate": 16.40,
+    "Period": "181 — 546 дн.",
+    "AmountFrom": 100000,
+    "AmountTo": 100000
+  },
+  {
+    "BankName": "SBI Банк",
+    "Rate": 16.00,
+    "Period": "91 — 730 дн.",
+    "AmountFrom": 30000,
+    "AmountTo": 30000000
+  },
+  {
+    "BankName": "Ури Банк",
+    "Rate": 16.00,
+    "Period": "30 — 91 дн.",
+    "AmountFrom": 1000000,
+    "AmountTo": 1000000
+  },
+  {
+    "BankName": "РБА",
+    "Rate": 16.00,
+    "Period": "30 — 365 дн.",
+    "AmountFrom": 10000,
+    "AmountTo": 10000
+  },
+  {
+    "BankName": "Центр-инвест",
+    "Rate": 15.50,
+    "Period": "365 дн.",
+    "AmountFrom": 100000,
+    "AmountTo": 100000
+  },
+  {
+    "BankName": "Банк «РЕСО Кредит»",
+    "Rate": 15.00,
+    "Period": "91 — 1095 дн.",
+    "AmountFrom": 100000,
+    "AmountTo": 100000
+  },
+  {
+    "BankName": "МТИ Банк",
+    "Rate": 15.19,
+    "Period": "91 — 395 дн.",
+    "AmountFrom": 500000,
+    "AmountTo": 15000000
+  },
+  {
+    "BankName": "Банк Интеза",
+    "Rate": 13.50,
+    "Period": "91 — 731 дн.",
+    "AmountFrom": 30000,
+    "AmountTo": 30000
+  },
+  {
+    "BankName": "Новый Московский Банк",
+    "Rate": 13.40,
+    "Period": "181 — 365 дн.",
+    "AmountFrom": 100000,
+    "AmountTo": 100000
+  },
+  {
+    "BankName": "Банк «Столичный Кредит»",
+    "Rate": 13.00,
+    "Period": "367 дн.",
+    "AmountFrom": 30000,
+    "AmountTo": 30000
+  },
+  {
+    "BankName": "Промсельхозбанк",
+    "Rate": 10.00,
+    "Period": "91 — 181 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "Банк «Соколовcкий»",
+    "Rate": 9.00,
+    "Period": "31 — 360 дн.",
+    "AmountFrom": 500000,
+    "AmountTo": 500000
+  },
+  {
+    "BankName": "АКБ «БЭНК ОФ ЧАЙНА»",
+    "Rate": 8.00,
+    "Period": "91 — 367 дн.",
+    "AmountFrom": 1000000,
+    "AmountTo": 1000000
+  },
+  {
+    "BankName": "Банк Кремлевский",
+    "Rate": 7.00,
+    "Period": "91 — 367 дн.",
+    "AmountFrom": 100000,
+    "AmountTo": 100000
+  },
+  {
+    "BankName": "АРЕСБАНК",
+    "Rate": 6.50,
+    "Period": "367 — 1101 дн.",
+    "AmountFrom": 1000000,
+    "AmountTo": 1000000
+  },
+  {
+    "BankName": "ДенизБанк Москва",
+    "Rate": 6.00,
+    "Period": "30 — 720 дн.",
+    "AmountFrom": 100000,
+    "AmountTo": 5000000
+  },
+  {
+    "BankName": "Вайлдберриз Банк",
+    "Rate": 6.17,
+    "Period": "32 — 367 дн.",
+    "AmountFrom": 50000,
+    "AmountTo": 50000
+  },
+  {
+    "BankName": "Спецстройбанк",
+    "Rate": 4.50,
+    "Period": "30 — 365 дн.",
+    "AmountFrom": 1000000,
+    "AmountTo": 1000000
+  },
+  {
+    "BankName": "СМЛТ Банк",
+    "Rate": 4.59,
+    "Period": "91 — 367 дн.",
+    "AmountFrom": 150000,
+    "AmountTo": 100000000
+  },
+  {
+    "BankName": "Российская Финансовая Корпорация",
+    "Rate": 4.50,
+    "Period": "91 — 181 дн.",
+    "AmountFrom": 1000,
+    "AmountTo": 1000
+  },
+  {
+    "BankName": "Эко-Инвест",
+    "Rate": 3.04,
+    "Period": "30 — 365 дн.",
+    "AmountFrom": 1,
+    "AmountTo": 1
+  },
+  {
+    "BankName": "АйСиБиСи Банк",
+    "Rate": 3.00,
+    "Period": "31 — 1095 дн.",
+    "AmountFrom": 100000,
+    "AmountTo": 100000
+  },
+  {
+    "BankName": "ЮниКредит Банк",
+    "Rate": 2.00,
+    "Period": "91 дн.",
+    "AmountFrom": 10000,
+    "AmountTo": 15000000
+  },
+  {
+    "BankName": "Ситибанк",
+    "Rate": 2.00,
+    "Period": "31 дн.",
+    "AmountFrom": 30000,
+    "AmountTo": 30000
   }
 ]

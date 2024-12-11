@@ -1,222 +1,463 @@
-﻿using System.Collections.ObjectModel;
-using System.Text.Json;
-using System.IO;
-using System.Diagnostics;
-using System.Text.RegularExpressions;
-using System.Globalization;
+﻿using System.Text.Json;
+namespace financialapp;
+using financialapp.Models;
+using System.Reflection;
 
-namespace financialapp
+public partial class MainPage : ContentPage
 {
-    public class Bank
+    public MainPage()
     {
-        public string BankName { get; set; }
-        public string Rate { get; set; }
-        public string Period { get; set; }
-        public string Amount { get; set; }
+        InitializeComponent();
+        PageTitle.Text = "Анализ инвестиций";
+        ShowPanel(nameof(InputPanel));
+
+
     }
 
-    public partial class MainPage : ContentPage
+    private async void LoadBankData()
     {
-        private ObservableCollection<Bank> banks;
-        public ObservableCollection<Bank> Banks
+        try
         {
-            get => banks;
-            set
+            // Получаем текущую сборку
+            var assembly = Assembly.GetExecutingAssembly();
+
+            // Путь к встроенному ресурсу
+            const string resourcePath = "financialapp.Resources.Raw.deposits.json";
+
+            // Открываем поток ресурса
+            using Stream? stream = assembly.GetManifestResourceStream(resourcePath);
+
+            // Проверяем, что ресурс найден
+            if (stream == null)
             {
-                banks = value;
-                OnPropertyChanged();
+                await DisplayAlert("Ошибка", "Ресурс deposits.json не найден", "OK");
+                return;
             }
-        }
 
-        private bool isResultsVisible;
-        public bool IsResultsVisible
-        {
-            get => isResultsVisible;
-            set
-            {
-                isResultsVisible = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public MainPage()
-        {
-            InitializeComponent();
-            Banks = new ObservableCollection<Bank>();
-            BindingContext = this;
-            Debug.WriteLine("Инициализация MainPage");
-            LoadJsonData();
-            Debug.WriteLine("Данные загружены");
-        }
-
-        private void LoadJsonData()
-        {
-            var assembly = typeof(MainPage).Assembly;
-            using Stream stream = assembly.GetManifestResourceStream("financialapp.Resources.Raw.deposits.json");
+            // Читаем содержимое ресурса
             using StreamReader reader = new StreamReader(stream);
-            string jsonString = reader.ReadToEnd();
+            string jsonContent = await reader.ReadToEndAsync();
 
-            Debug.WriteLine("JSON строка:");
-            Debug.WriteLine(jsonString);
+            // Десериализуем JSON
+            var deposits = JsonSerializer.Deserialize<List<Deposit>>(jsonContent);
 
-            var banks = JsonSerializer.Deserialize<List<Bank>>(jsonString);
-            Banks = new ObservableCollection<Bank>(banks);
-
-            Debug.WriteLine("Данные из JSON файла загружены");
-            Debug.WriteLine($"Количество банков в коллекции: {Banks?.Count}");
-
-            // Отладочный вывод для каждого банка
-            foreach (var bank in Banks)
+            // Проверяем, что данные не пустые
+            if (deposits == null || deposits.Count == 0)
             {
-                Debug.WriteLine($"BankName: {bank.BankName}, Rate: {Regex.Replace(bank.Rate, @"\D", "")}, Period: {bank.Period}, Amount: {bank.Amount}");
+                await DisplayAlert("Ошибка", "Нет данных для отображения", "OK");
+                return;
             }
 
-            // Динамическое добавление элементов в Grid
-            AddBanksToGrid();
-        }
+            // Очищаем предыдущие элементы интерфейса
+            BankList.Children.Clear();
 
-        private void AddBanksToGrid()
-        {
-            ResultsGrid.Children.Clear();
-            ResultsGrid.RowDefinitions.Clear();
-            ResultsGrid.ColumnDefinitions.Clear();
-
-            int maxItemsPerColumn = 4;
-            int columnCount = (Banks.Count + maxItemsPerColumn - 1) / maxItemsPerColumn;
-
-            for (int i = 0; i < columnCount; i++)
+            // Создаем элементы для каждого депозита
+            foreach (var deposit in deposits)
             {
-                ResultsGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
-            }
-
-            for (int i = 0; i < Banks.Count; i++)
-            {
-                int row = i % maxItemsPerColumn;
-                int column = i / maxItemsPerColumn;
-
-                if (row >= ResultsGrid.RowDefinitions.Count)
+                var frame = new Frame
                 {
-                    ResultsGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
-                }
-
-                var bank = Banks[i];
-                var stackLayout = new StackLayout
-                {
-                    Padding = new Thickness(10),
+                    CornerRadius = 20,
+                    Padding = 10,
                     BackgroundColor = Colors.White,
-                    Margin = new Thickness(0, 0, 0, 10),
-                    Children =
-            {
-                new Label { Text = bank.BankName, FontSize = 18, FontAttributes = FontAttributes.Bold, TextColor = Colors.Black },
-                new Label { Text = bank.Rate, TextColor = Colors.Black },
-                new Label { Text = bank.Period, TextColor = Colors.Black },
-                new Label { Text = bank.Amount, TextColor = Colors.Black }
-            }
+                    Margin = new Thickness(0, 5)
                 };
 
-                // Call a separate method to calculate and update expected income
-                UpdateExpectedIncome(stackLayout, bank);
-
-                ResultsGrid.Children.Add(stackLayout);
-                Grid.SetRow(stackLayout, row);
-                Grid.SetColumn(stackLayout, column);
-            }
-        }
-
-
-
-        private void UpdateExpectedIncome(StackLayout stackLayout, Bank bank)
-        {
-            if (decimal.TryParse(MainEntry.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out decimal amount) &&
-                int.TryParse(Time.Text, out int period) &&
-                decimal.TryParse(Regex.Replace(bank.Rate, @"\D", ""), NumberStyles.Any, CultureInfo.InvariantCulture, out decimal rateParsed))
-            {
-                decimal rate = rateParsed / 100;
-                decimal expectedIncome = amount * rate / 12 * period;
-
-                // Remove any existing expected income label before adding a new one
-                var existingIncomeLabel = stackLayout.Children.FirstOrDefault(c => (c as Label)?.Text?.StartsWith("Ожидаемый доход") == true);
-                if (existingIncomeLabel != null)
+                var stackLayout = new VerticalStackLayout();
+                stackLayout.Children.Add(new Label
                 {
-                    stackLayout.Children.Remove(existingIncomeLabel);
-                }
-
-                stackLayout.Children.Add(new Label { Text = $"Ожидаемый доход за период: {expectedIncome}", TextColor = Colors.Black });
-            }
-            else
-            {
-                // Optionally, handle cases where parsing fails (e.g., invalid input)
-                var existingIncomeLabel = stackLayout.Children.FirstOrDefault(c => (c as Label)?.Text?.StartsWith("Ожидаемый доход") == true);
-                if (existingIncomeLabel != null)
+                    Text = deposit.BankName,
+                    FontAttributes = FontAttributes.Bold,
+                    FontSize = 18,
+                    TextColor = Colors.Black
+                });
+                stackLayout.Children.Add(new Label
                 {
-                    stackLayout.Children.Remove(existingIncomeLabel);
-                }
+                    Text = $"{deposit.AmountFrom:n0} ₽ – {deposit.AmountTo:n0} ₽\n{deposit.Rate}%\n{deposit.Period}",
+                    TextColor = Colors.Gray
+                });
+
+                frame.Content = stackLayout;
+                BankList.Children.Add(frame);
             }
         }
-
-
-
-
-
-        private void OnMenuButtonClicked(object sender, EventArgs e)
+        catch (Exception ex)
         {
-            ShowMenu();
+            // Обработка исключений
+            await DisplayAlert("Ошибка", $"Произошла ошибка при загрузке данных: {ex.Message}", "OK");
         }
+    }
 
-        private void ShowMenu()
+    private async void LoadMutualFundsData()
+    {
+        try
         {
-            MenuBackground.IsVisible = true;
-            ContextMenu.IsVisible = true;
+            // Получаем текущую сборку
+            var assembly = Assembly.GetExecutingAssembly();
 
-            // Анимация появления
-            ContextMenu.Opacity = 0;
-            ContextMenu.TranslationY = -10;
+            // Путь к встроенному ресурсу
+            const string resourcePath = "financialapp.Resources.Raw.mutual_funds.json";
 
-            Animation animation = new Animation();
-            animation.Add(0, 1, new Animation((value) => ContextMenu.Opacity = value, 0, 1));
-            animation.Add(0, 1, new Animation((value) => ContextMenu.TranslationY = value, -10, 0));
-            animation.Commit(this, "MenuAnimation", 16, 250, Easing.CubicOut);
+            // Открываем поток ресурса
+            using Stream? stream = assembly.GetManifestResourceStream(resourcePath);
+
+            // Проверяем, что ресурс найден
+            if (stream == null)
+            {
+                await DisplayAlert("Ошибка", "Ресурс mutual_funds.json не найден", "OK");
+                return;
+            }
+
+            // Читаем содержимое ресурса
+            using StreamReader reader = new StreamReader(stream);
+            string jsonContent = await reader.ReadToEndAsync();
+
+            // Десериализуем JSON
+            var mutualFunds = JsonSerializer.Deserialize<List<MutualFund>>(jsonContent);
+
+            // Проверяем, что данные не пустые
+            if (mutualFunds == null || mutualFunds.Count == 0)
+            {
+                await DisplayAlert("Ошибка", "Нет данных для отображения", "OK");
+                return;
+            }
+
+            // Очищаем предыдущие элементы интерфейса
+            MutualFundsList.Children.Clear();
+
+            // Создаем элементы для каждого фонда
+            foreach (var fund in mutualFunds)
+            {
+                var frame = new Frame
+                {
+                    CornerRadius = 20,
+                    Padding = 10,
+                    BackgroundColor = Colors.White,
+                    Margin = new Thickness(0, 5)
+                };
+
+                var stackLayout = new VerticalStackLayout();
+                stackLayout.Children.Add(new Label
+                {
+                    Text = $"{fund.Name} ({fund.Company})",
+                    FontAttributes = FontAttributes.Bold,
+                    FontSize = 18,
+                    TextColor = Colors.Black
+                });
+                stackLayout.Children.Add(new Label
+                {
+                    Text = $"Доходность за год: {fund.AnnualReturn}\nКомиссия: {fund.ManagementFee}\nМин. вложение: {fund.MinimumInvestment}",
+                    TextColor = Colors.Gray
+                });
+
+                frame.Content = stackLayout;
+                MutualFundsList.Children.Add(frame);
+            }
         }
-
-        private void HideMenu()
+        catch (Exception ex)
         {
-            MenuBackground.IsVisible = false;
-            ContextMenu.IsVisible = false;
-            ContextMenu.TranslationY = 0;
+            // Обработка исключений
+            await DisplayAlert("Ошибка", $"Произошла ошибка при загрузке данных: {ex.Message}", "OK");
         }
+    }
 
-        private void OnBackgroundTapped(object sender, EventArgs e)
-        {
-            HideMenu();
-        }
 
-        // Обработчики пунктов меню
-        private async void OnFinancialAnalysisClicked(object sender, EventArgs e)
+    private async void LoadSharesData()
+    {
+        try
         {
-            IsResultsVisible = true;
-            HideMenu();
-            // Логика для отображения финансового анализа
-            await DisplayAlert("Финансовый анализ", "Открыт раздел финансового анализа", "OK");
-        }
+            // Получаем текущую сборку
+            var assembly = Assembly.GetExecutingAssembly();
 
-        private async void OnInitialDataClicked(object sender, EventArgs e)
-        {
-            HideMenu();
-            // Логика для отображения исходных данных
-            await DisplayAlert("Исходные данные", "Открыт раздел исходных данных", "OK");
-        }
+            // Путь к встроенному ресурсу
+            const string resourcePath = "financialapp.Resources.Raw.shares.json";
 
-        private async void OnProfitChartsClicked(object sender, EventArgs e)
-        {
-            HideMenu();
-            // Логика для отображения графиков доходности
-            await DisplayAlert("Графики доходности", "Открыт раздел графиков доходности", "OK");
-        }
+            // Открываем поток ресурса
+            using Stream? stream = assembly.GetManifestResourceStream(resourcePath);
 
-        protected override void OnDisappearing()
-        {
-            base.OnDisappearing();
-            HideMenu();
+            // Проверяем, что ресурс найден
+            if (stream == null)
+            {
+                await DisplayAlert("Ошибка", "Ресурс shares.json не найден", "OK");
+                return;
+            }
+
+            // Читаем содержимое ресурса
+            using StreamReader reader = new StreamReader(stream);
+            string jsonContent = await reader.ReadToEndAsync();
+
+            // Десериализуем JSON
+            var shares = JsonSerializer.Deserialize<List<Share>>(jsonContent);
+
+            // Проверяем, что данные не пустые
+            if (shares == null || shares.Count == 0)
+            {
+                await DisplayAlert("Ошибка", "Нет данных для отображения", "OK");
+                return;
+            }
+
+            // Очищаем предыдущие элементы интерфейса
+            SharesList.Children.Clear();
+
+            // Создаем элементы для каждого объекта акции
+            foreach (var share in shares)
+            {
+                var frame = new Frame
+                {
+                    CornerRadius = 20,
+                    Padding = 10,
+                    BackgroundColor = Colors.White,
+                    Margin = new Thickness(0, 5)
+                };
+
+                var stackLayout = new VerticalStackLayout();
+                stackLayout.Children.Add(new Label
+                {
+                    Text = $"{share.Name} ({share.Ticker})",
+                    FontAttributes = FontAttributes.Bold,
+                    FontSize = 18,
+                    TextColor = Colors.Black
+                });
+                stackLayout.Children.Add(new Label
+                {
+                    Text = $"Цена: {share.Price}\nИзменение: {share.PriceChange}\nДоходность за год: {share.AnnualReturn}\nРиск: {share.Risk}",
+                    TextColor = Colors.Gray
+                });
+
+                frame.Content = stackLayout;
+                SharesList.Children.Add(frame);
+            }
         }
+        catch (Exception ex)
+        {
+            // Обработка исключений
+            await DisplayAlert("Ошибка", $"Произошла ошибка при загрузке данных: {ex.Message}", "OK");
+        }
+    }
+
+    private async void LoadCurrencyData()
+    {
+        try
+        {
+            // Получаем текущую сборку
+            var assembly = Assembly.GetExecutingAssembly();
+
+            // Путь к встроенному ресурсу
+            const string resourcePath = "financialapp.Resources.Raw.currencies.json";
+
+            // Открываем поток ресурса
+            using Stream? stream = assembly.GetManifestResourceStream(resourcePath);
+
+            // Проверяем, что ресурс найден
+            if (stream == null)
+            {
+                await DisplayAlert("Ошибка", "Ресурс currencies.json не найден", "OK");
+                return;
+            }
+
+            // Читаем содержимое ресурса
+            using StreamReader reader = new StreamReader(stream);
+            string jsonContent = await reader.ReadToEndAsync();
+
+            // Десериализуем JSON
+            var currencies = JsonSerializer.Deserialize<List<Currency>>(jsonContent);
+
+            // Проверяем, что данные не пустые
+            if (currencies == null || currencies.Count == 0)
+            {
+                await DisplayAlert("Ошибка", "Нет данных для отображения", "OK");
+                return;
+            }
+
+            // Очищаем список интерфейса
+            CurrencyList.Children.Clear();
+
+            // Создаем элементы для каждой валюты
+            foreach (var currency in currencies)
+            {
+                if (currency.Rates == null || currency.Rates.Count < 2)
+                    continue;
+
+                var previousRate = currency.Rates[0];
+                var latestRate = currency.Rates[1];
+
+                var frame = new Frame
+                {
+                    CornerRadius = 20,
+                    Padding = 10,
+                    BackgroundColor = Colors.White,
+                    Margin = new Thickness(0, 5)
+                };
+
+                var stackLayout = new VerticalStackLayout();
+                stackLayout.Children.Add(new Label
+                {
+                    Text = $"{currency.Name} ({currency.Code})",
+                    FontAttributes = FontAttributes.Bold,
+                    FontSize = 18,
+                    TextColor = Colors.Black
+                });
+                stackLayout.Children.Add(new Label
+                {
+                    Text = $"Курс на {previousRate.Date}: {previousRate.Value}",
+                    TextColor = Colors.Gray
+                });
+                stackLayout.Children.Add(new Label
+                {
+                    Text = $"Курс на {latestRate.Date}: {latestRate.Value}",
+                    TextColor = Colors.Gray
+                });
+
+                frame.Content = stackLayout;
+                CurrencyList.Children.Add(frame);
+            }
+        }
+        catch (Exception ex)
+        {
+            // Обработка ошибок
+            await DisplayAlert("Ошибка", $"Произошла ошибка при загрузке данных: {ex.Message}", "OK");
+        }
+    }
+
+
+
+
+    private async void LoadMetalsData()
+    {
+        try
+        {
+            // Получаем текущую сборку
+            var assembly = Assembly.GetExecutingAssembly();
+
+            // Путь к встроенному ресурсу
+            const string resourcePath = "financialapp.Resources.Raw.metals.json";
+
+            // Открываем поток ресурса
+            using Stream? stream = assembly.GetManifestResourceStream(resourcePath);
+
+            // Проверяем, что ресурс найден
+            if (stream == null)
+            {
+                await DisplayAlert("Ошибка", "Ресурс metals.json не найден", "OK");
+                return;
+            }
+
+            // Читаем содержимое ресурса
+            using StreamReader reader = new StreamReader(stream);
+            string jsonContent = await reader.ReadToEndAsync();
+
+            // Десериализуем JSON
+            var metals = JsonSerializer.Deserialize<List<Metal>>(jsonContent);
+
+            // Проверяем, что данные не пустые
+            if (metals == null || metals.Count == 0)
+            {
+                await DisplayAlert("Ошибка", "Нет данных для отображения", "OK");
+                return;
+            }
+
+            // Очищаем предыдущие элементы интерфейса
+            MetalsList.Children.Clear();
+
+            // Создаем элементы для каждого металла
+            foreach (var metal in metals)
+            {
+                if (metal.Prices == null || metal.Prices.Count < 2)
+                    continue;
+
+                var previousPrice = metal.Prices[0];
+                var latestPrice = metal.Prices[1];
+
+                var frame = new Frame
+                {
+                    CornerRadius = 20,
+                    Padding = 10,
+                    BackgroundColor = Colors.White,
+                    Margin = new Thickness(0, 5)
+                };
+
+                var stackLayout = new VerticalStackLayout();
+                stackLayout.Children.Add(new Label
+                {
+                    Text = $"{metal.Name} ({metal.Code})",
+                    FontAttributes = FontAttributes.Bold,
+                    FontSize = 18,
+                    TextColor = Colors.Black
+                });
+                stackLayout.Children.Add(new Label
+                {
+                    Text = $"Цена на {previousPrice.Date}: {previousPrice.Value}",
+                    TextColor = Colors.Gray
+                });
+                stackLayout.Children.Add(new Label
+                {
+                    Text = $"Цена на {latestPrice.Date}: {latestPrice.Value}",
+                    TextColor = Colors.Gray
+                });
+
+                frame.Content = stackLayout;
+                MetalsList.Children.Add(frame);
+            }
+        }
+        catch (Exception ex)
+        {
+            // Обработка исключений
+            await DisplayAlert("Ошибка", $"Произошла ошибка при загрузке данных: {ex.Message}", "OK");
+        }
+    }
+
+
+
+    private void OnMutualFundsClicked(object sender, EventArgs e)
+    {
+        PageTitle.Text = "Паи";
+        ShowPanel(nameof(MutualFundsPanel));
+        LoadMutualFundsData();
+
+    }
+    private void OnDepositsClicked(object sender, EventArgs e)
+    {
+        PageTitle.Text = "Вклады";
+        ShowPanel(nameof(BankPanel));
+        LoadBankData();
+
+    }
+    private void OnCurrencyClicked(object sender, EventArgs e)
+    {
+        PageTitle.Text = "Валюта";
+        ShowPanel(nameof(CurrencyPanel));
+        LoadCurrencyData();
+    }
+    private void OnMetalsClicked(object sender, EventArgs e)
+    {
+        PageTitle.Text = "Металлы";
+        ShowPanel(nameof(MetalsPanel));
+        LoadMetalsData();
+    }
+
+    private void OnSharesClicked(object sender, EventArgs e)
+    {
+        PageTitle.Text = "Акции";
+        ShowPanel(nameof(SharesPanel));
+        LoadSharesData();
+    }
+
+    private void ShowPanel(string panelName)
+    {
+        BankPanel.IsVisible = panelName == nameof(BankPanel);
+        SharesPanel.IsVisible = panelName == nameof(SharesPanel);
+        MutualFundsPanel.IsVisible = panelName == nameof(MutualFundsPanel);
+        CurrencyPanel.IsVisible = panelName == nameof(CurrencyPanel);
+        MetalsPanel.IsVisible = panelName == nameof(MetalsPanel);
+        InputPanel.IsVisible = panelName == nameof(InputPanel);
+    }
+
+    private void Button_Clicked(object sender, EventArgs e)
+    {
+        // Скрываем панель с инпутами
+        InputPanel.IsVisible = false;
+
+        PageTitle.Text = "Вклады";
+        ShowPanel(nameof(BankPanel));
+        LoadBankData();
     }
 }

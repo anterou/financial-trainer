@@ -1,0 +1,86 @@
+[
+  {
+    "FundName": "БПИФ «Альфа-Капитал Золото (AKGD)»",
+    "AnnualReturn": "44,80%",
+    "ManagementFee": "44,80%",
+    "MinInvestment": null,
+    "Description": null
+  },
+  {
+    "FundName": "«Золото. Биржевой» (GOLD)",
+    "AnnualReturn": "44,17%",
+    "ManagementFee": "44,17%",
+    "MinInvestment": null,
+    "Description": null
+  },
+  {
+    "FundName": "«Первая — Фонд Доступное золото (SBGD)»",
+    "AnnualReturn": "43,99%",
+    "ManagementFee": "43,99%",
+    "MinInvestment": null,
+    "Description": null
+  },
+  {
+    "FundName": "«Тинькофф Золото (TGLD)»",
+    "AnnualReturn": "39,45%",
+    "ManagementFee": "39,45%",
+    "MinInvestment": null,
+    "Description": null
+  },
+  {
+    "FundName": "«Ликвидность» (LQDT)",
+    "AnnualReturn": "17,20%",
+    "ManagementFee": "17,20%",
+    "MinInvestment": null,
+    "Description": null
+  },
+  {
+    "FundName": "«Тинькофф Денежный рынок (TMON)»",
+    "AnnualReturn": "17,08%",
+    "ManagementFee": "17,08%",
+    "MinInvestment": null,
+    "Description": null
+  },
+  {
+    "FundName": "БПИФ «Альфа-Капитал Денежный рынок (AKMM)»",
+    "AnnualReturn": "17%",
+    "ManagementFee": "17%",
+    "MinInvestment": null,
+    "Description": null
+  },
+  {
+    "FundName": "«Первая — Фонд Сберегательный (SBMM)»",
+    "AnnualReturn": "16,98%",
+    "ManagementFee": "16,98%",
+    "MinInvestment": null,
+    "Description": null
+  },
+  {
+    "FundName": "«Первая — Фонд Консервативный смарт (SBCS)»",
+    "AnnualReturn": "14,72%",
+    "ManagementFee": "14,72%",
+    "MinInvestment": null,
+    "Description": null
+  },
+  {
+    "FundName": "«Тинькофф Вечный портфель RUB (TRUR)»",
+    "AnnualReturn": "8,31%",
+    "ManagementFee": "8,31%",
+    "MinInvestment": null,
+    "Description": null
+  },
+  {
+    "FundName": "«Первая — Фонд Сберегательный в юанях (SBCN)»",
+    "AnnualReturn": "6,80%",
+    "ManagementFee": "6,80%",
+    "MinInvestment": null,
+    "Description": null
+  },
+  {
+    "FundName": "БПИФ «Альфа-Капитал Управляемые Акции (AKME)»",
+    "AnnualReturn": "5,40%",
+    "ManagementFee": "5,40%",
+    "MinInvestment": null,
+    "Description": null
+  }
+]

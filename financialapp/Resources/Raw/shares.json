@@ -1,0 +1,1082 @@
+[
+  {
+    "Name": "СПБ Биржа",
+    "Ticker": "SPBE",
+    "Price": "118,4 ₽",
+    "PriceChange": "-11,8 ₽",
+    "AnnualReturn": "-16%",
+    "Risk": "27%",
+    "HalfYearReturn": "81.646 %"
+  },
+  {
+    "Name": "Ашинский метзавод",
+    "Ticker": "AMEZ",
+    "Price": "68,25 ₽",
+    "PriceChange": "-8 ₽",
+    "AnnualReturn": "-0%",
+    "Risk": "69%",
+    "HalfYearReturn": "3.891 %"
+  },
+  {
+    "Name": "Аэрофлот",
+    "Ticker": "AFLT",
+    "Price": "51,18 ₽",
+    "PriceChange": "-10,85 ₽",
+    "AnnualReturn": "48%",
+    "Risk": "31%",
+    "HalfYearReturn": "77.87 %"
+  },
+  {
+    "Name": "ПИК ГК",
+    "Ticker": "PIKK",
+    "Price": "397,1 ₽",
+    "PriceChange": "-117,3 ₽",
+    "AnnualReturn": "27%",
+    "Risk": "60%",
+    "HalfYearReturn": "41.755 %"
+  },
+  {
+    "Name": "Московский кредитный банк",
+    "Ticker": "CBOM",
+    "Price": "8,117 ₽",
+    "PriceChange": "1,212 ₽",
+    "AnnualReturn": "13%",
+    "Risk": "32%",
+    "HalfYearReturn": "-5.608 %"
+  },
+  {
+    "Name": "Тамбовская энергосбытовая компания",
+    "Ticker": "TASB",
+    "Price": "1,218 ₽",
+    "PriceChange": "0,216 ₽",
+    "AnnualReturn": "56%",
+    "Risk": "58%",
+    "HalfYearReturn": "23.711 %"
+  },
+  {
+    "Name": "Башнефть",
+    "Ticker": "BANE",
+    "Price": "2141,5 ₽",
+    "PriceChange": "-348,5 ₽",
+    "AnnualReturn": "46%",
+    "Risk": "43%",
+    "HalfYearReturn": "38.543 %"
+  },
+  {
+    "Name": "Мечел",
+    "Ticker": "MTLRP",
+    "Price": "85 ₽",
+    "PriceChange": "-26,1 ₽",
+    "AnnualReturn": "25%",
+    "Risk": "81%",
+    "HalfYearReturn": "-32.764 %"
+  },
+  {
+    "Name": "Банк Санкт-Петербург",
+    "Ticker": "BSPB",
+    "Price": "318,97 ₽",
+    "PriceChange": "-35,42 ₽",
+    "AnnualReturn": "125%",
+    "Risk": "23%",
+    "HalfYearReturn": "75.562 %"
+  },
+  {
+    "Name": "КарМани",
+    "Ticker": "CARM",
+    "Price": "1,5205 ₽",
+    "PriceChange": "0,315 ₽",
+    "AnnualReturn": null,
+    "Risk": "42%",
+    "HalfYearReturn": "-4.377 %"
+  },
+  {
+    "Name": "Томская распределительная компания",
+    "Ticker": "TORSP",
+    "Price": "0,432 ₽",
+    "PriceChange": "0,009 ₽",
+    "AnnualReturn": "24%",
+    "Risk": "30%",
+    "HalfYearReturn": "15.668 %"
+  },
+  {
+    "Name": "АМО ЗИЛ",
+    "Ticker": "ZILL",
+    "Price": "3095 ₽",
+    "PriceChange": "—",
+    "AnnualReturn": null,
+    "Risk": "28%",
+    "HalfYearReturn": "8.199 %"
+  },
+  {
+    "Name": "Красный Октябрь",
+    "Ticker": "KROTP",
+    "Price": "517 ₽",
+    "PriceChange": "19 ₽",
+    "AnnualReturn": "5%",
+    "Risk": "60%",
+    "HalfYearReturn": "22.112 %"
+  },
+  {
+    "Name": "Банк Санкт-Петербург",
+    "Ticker": "BSPBP",
+    "Price": "50,5 ₽",
+    "PriceChange": "-6,6 ₽",
+    "AnnualReturn": "-17%",
+    "Risk": "30%",
+    "HalfYearReturn": "8.414 %"
+  },
+  {
+    "Name": "ТГК-2",
+    "Ticker": "TGKB",
+    "Price": "0,00593 ₽",
+    "PriceChange": "0,001 ₽",
+    "AnnualReturn": "114%",
+    "Risk": "64%",
+    "HalfYearReturn": "12.737 %"
+  },
+  {
+    "Name": "Мечел",
+    "Ticker": "MTLR",
+    "Price": "83 ₽",
+    "PriceChange": "-25,57 ₽",
+    "AnnualReturn": "25%",
+    "Risk": "77%",
+    "HalfYearReturn": "-27.734 %"
+  },
+  {
+    "Name": "Россети Ленэнерго",
+    "Ticker": "LSNGP",
+    "Price": "192 ₽",
+    "PriceChange": "-13,5 ₽",
+    "AnnualReturn": "9%",
+    "Risk": "21%",
+    "HalfYearReturn": "19.508 %"
+  },
+  {
+    "Name": "Саратовэнерго",
+    "Ticker": "SARE",
+    "Price": "0,354 ₽",
+    "PriceChange": "0,078 ₽",
+    "AnnualReturn": "123%",
+    "Risk": "60%",
+    "HalfYearReturn": "-1.026 %"
+  },
+  {
+    "Name": "ТНС энерго Ростов-на-Дону",
+    "Ticker": "RTSBP",
+    "Price": "1,112 ₽",
+    "PriceChange": "0,282 ₽",
+    "AnnualReturn": "78%",
+    "Risk": "62%",
+    "HalfYearReturn": "50.655 %"
+  },
+  {
+    "Name": "Группа Позитив",
+    "Ticker": "POSI",
+    "Price": "2001,6 ₽",
+    "PriceChange": "-174,4 ₽",
+    "AnnualReturn": "53%",
+    "Risk": "43%",
+    "HalfYearReturn": "49.95 %"
+  },
+  {
+    "Name": "МРСК Центра и Приволжья",
+    "Ticker": "MRKP",
+    "Price": "0,3323 ₽",
+    "PriceChange": "0,009 ₽",
+    "AnnualReturn": "44%",
+    "Risk": "34%",
+    "HalfYearReturn": "11.146 %"
+  },
+  {
+    "Name": "ЕвропейскаяЭлектротехника",
+    "Ticker": "EELT",
+    "Price": "12,06 ₽",
+    "PriceChange": "0,6 ₽",
+    "AnnualReturn": "53%",
+    "Risk": "54%",
+    "HalfYearReturn": "50.709 %"
+  },
+  {
+    "Name": "Детский мир",
+    "Ticker": "DSKY",
+    "Price": "51,02 ₽",
+    "PriceChange": "—",
+    "AnnualReturn": "-37%",
+    "Risk": "40%",
+    "HalfYearReturn": "-21.997 %"
+  },
+  {
+    "Name": "Казаньоргсинтез",
+    "Ticker": "KZOSP",
+    "Price": "18,7 ₽",
+    "PriceChange": "-1,31 ₽",
+    "AnnualReturn": "-19%",
+    "Risk": "38%",
+    "HalfYearReturn": "-7.175 %"
+  },
+  {
+    "Name": "Лента",
+    "Ticker": "LENT",
+    "Price": "1100 ₽",
+    "PriceChange": "25 ₽",
+    "AnnualReturn": "50%",
+    "Risk": "25%",
+    "HalfYearReturn": "65.651 %"
+  },
+  {
+    "Name": "Иркут НПК",
+    "Ticker": "IRKT",
+    "Price": "24,45 ₽",
+    "PriceChange": "-7,75 ₽",
+    "AnnualReturn": "-2%",
+    "Risk": "76%",
+    "HalfYearReturn": "-3.509 %"
+  },
+  {
+    "Name": "Мостотрест",
+    "Ticker": "MSTT",
+    "Price": "134,6 ₽",
+    "PriceChange": "-38,1 ₽",
+    "AnnualReturn": "-17%",
+    "Risk": "49%",
+    "HalfYearReturn": "-14.276 %"
+  },
+  {
+    "Name": "АГК Кристалл",
+    "Ticker": "KLVZ",
+    "Price": "4,042 ₽",
+    "PriceChange": "0,456 ₽",
+    "AnnualReturn": null,
+    "Risk": "56%",
+    "HalfYearReturn": "Московская биржа"
+  },
+  {
+    "Name": "Novabev Group",
+    "Ticker": "BELU",
+    "Price": "590 ₽",
+    "PriceChange": "-53 ₽",
+    "AnnualReturn": "35%",
+    "Risk": "91%",
+    "HalfYearReturn": "7.407 %"
+  },
+  {
+    "Name": "Россети Центр",
+    "Ticker": "MRKC",
+    "Price": "0,4416 ₽",
+    "PriceChange": "0,017 ₽",
+    "AnnualReturn": "42%",
+    "Risk": "44%",
+    "HalfYearReturn": "2.092 %"
+  },
+  {
+    "Name": "Сбер Банк",
+    "Ticker": "SBER",
+    "Price": "237,29 ₽",
+    "PriceChange": "-23,44 ₽",
+    "AnnualReturn": "33%",
+    "Risk": "32%",
+    "HalfYearReturn": "17.973 %"
+  },
+  {
+    "Name": "Сбер Банк",
+    "Ticker": "SBERP",
+    "Price": "237,5 ₽",
+    "PriceChange": "-23,77 ₽",
+    "AnnualReturn": "34%",
+    "Risk": "32%",
+    "HalfYearReturn": "17.981 %"
+  },
+  {
+    "Name": "Соллерс",
+    "Ticker": "SVAV",
+    "Price": "668,5 ₽",
+    "PriceChange": "-123,5 ₽",
+    "AnnualReturn": "25%",
+    "Risk": "40%",
+    "HalfYearReturn": "23.223 %"
+  },
+  {
+    "Name": "ТНС энерго Нижний Новгород",
+    "Ticker": "NNSB",
+    "Price": "3400 ₽",
+    "PriceChange": "-490 ₽",
+    "AnnualReturn": "49%",
+    "Risk": "49%",
+    "HalfYearReturn": "1.608 %"
+  },
+  {
+    "Name": "ВУШ Холдинг",
+    "Ticker": "WUSH",
+    "Price": "147,59 ₽",
+    "PriceChange": "-25,35 ₽",
+    "AnnualReturn": "28%",
+    "Risk": "59%",
+    "HalfYearReturn": "32.069 %"
+  },
+  {
+    "Name": "Донской завод радиодеталей",
+    "Ticker": "DZRDP",
+    "Price": "2750 ₽",
+    "PriceChange": "-220 ₽",
+    "AnnualReturn": "-4%",
+    "Risk": "46%",
+    "HalfYearReturn": "-17.143 %"
+  },
+  {
+    "Name": "ЧКПЗ",
+    "Ticker": "CHKZ",
+    "Price": "16 650 ₽",
+    "PriceChange": "-2 950 ₽",
+    "AnnualReturn": "109%",
+    "Risk": "51%",
+    "HalfYearReturn": "25.587 %"
+  },
+  {
+    "Name": "Мосэнерго (ТГК-3)",
+    "Ticker": "MSNG",
+    "Price": "2,1605 ₽",
+    "PriceChange": "0,273 ₽",
+    "AnnualReturn": "1%",
+    "Risk": "43%",
+    "HalfYearReturn": "2.998 %"
+  },
+  {
+    "Name": "Варьеганнефтегаз",
+    "Ticker": "VJGZP",
+    "Price": "1525 ₽",
+    "PriceChange": "-105 ₽",
+    "AnnualReturn": "175%",
+    "Risk": "50%",
+    "HalfYearReturn": "78.52 %"
+  },
+  {
+    "Name": "Соликамский Магниевый Завод",
+    "Ticker": "MGNZ",
+    "Price": "7440 ₽",
+    "PriceChange": null,
+    "AnnualReturn": null,
+    "Risk": null,
+    "HalfYearReturn": "Московская биржа"
+  },
+  {
+    "Name": "Группа Черкизово",
+    "Ticker": "GCHE",
+    "Price": "3805 ₽",
+    "PriceChange": "-293 ₽",
+    "AnnualReturn": "48%",
+    "Risk": "33%",
+    "HalfYearReturn": "11.33 %"
+  },
+  {
+    "Name": "ГК ТНС энерго",
+    "Ticker": "TNSE",
+    "Price": "2180 ₽",
+    "PriceChange": "-230 ₽",
+    "AnnualReturn": "145%",
+    "Risk": "57%",
+    "HalfYearReturn": "-11.929 %"
+  },
+  {
+    "Name": "Дальневосточная энергетическая компания",
+    "Ticker": "DVEC",
+    "Price": "2,076 ₽",
+    "PriceChange": "0,493 ₽",
+    "AnnualReturn": "79%",
+    "Risk": "53%",
+    "HalfYearReturn": "-15.448 %"
+  },
+  {
+    "Name": "Центр Международной Торговли",
+    "Ticker": "WTCM",
+    "Price": "12,7 ₽",
+    "PriceChange": "0,78 ₽",
+    "AnnualReturn": "15%",
+    "Risk": "37%",
+    "HalfYearReturn": "16.8 %"
+  },
+  {
+    "Name": "Ижсталь",
+    "Ticker": "IGST",
+    "Price": "6140 ₽",
+    "PriceChange": "-280 ₽",
+    "AnnualReturn": "102%",
+    "Risk": "62%",
+    "HalfYearReturn": "-6.726 %"
+  },
+  {
+    "Name": "Мордовская энергосбытовая компания",
+    "Ticker": "MRSB",
+    "Price": "0,94 ₽",
+    "PriceChange": "0,132 ₽",
+    "AnnualReturn": "42%",
+    "Risk": "36%",
+    "HalfYearReturn": "3.846 %"
+  },
+  {
+    "Name": "Ставропольэнергосбыт",
+    "Ticker": "STSB",
+    "Price": "3,245 ₽",
+    "PriceChange": "0,225 ₽",
+    "AnnualReturn": "44%",
+    "Risk": "30%",
+    "HalfYearReturn": "42.588 %"
+  },
+  {
+    "Name": "Газпром нефть",
+    "Ticker": "SIBN",
+    "Price": "567,15 ₽",
+    "PriceChange": "-16,15 ₽",
+    "AnnualReturn": "34%",
+    "Risk": "44%",
+    "HalfYearReturn": "-17.951 %"
+  },
+  {
+    "Name": "Тамбовская энергосбытовая компания",
+    "Ticker": "TASBP",
+    "Price": "0,698 ₽",
+    "PriceChange": "0,052 ₽",
+    "AnnualReturn": "48%",
+    "Risk": "56%",
+    "HalfYearReturn": "14.928 %"
+  },
+  {
+    "Name": "Центр Международной Торговли",
+    "Ticker": "WTCMP",
+    "Price": "9,74 ₽",
+    "PriceChange": "0,74 ₽",
+    "AnnualReturn": "18%",
+    "Risk": "34%",
+    "HalfYearReturn": "14.44 %"
+  },
+  {
+    "Name": "Энел Россия",
+    "Ticker": "OGKE",
+    "Price": "0,482 ₽",
+    "PriceChange": "0,084 ₽",
+    "AnnualReturn": "0%",
+    "Risk": "36%",
+    "HalfYearReturn": "-15.997 %"
+  },
+  {
+    "Name": "Русал",
+    "Ticker": "RUAL",
+    "Price": "33,115 ₽",
+    "PriceChange": "-4,715 ₽",
+    "AnnualReturn": "10%",
+    "Risk": "35%",
+    "HalfYearReturn": "25.241 %"
+  },
+  {
+    "Name": "Камчатскэнерго",
+    "Ticker": "KCHE",
+    "Price": "0,48 ₽",
+    "PriceChange": "0,052 ₽",
+    "AnnualReturn": "119%",
+    "Risk": "49%",
+    "HalfYearReturn": "-0.637 %"
+  },
+  {
+    "Name": "ЧЗПСН-Профнастил",
+    "Ticker": "PRFN",
+    "Price": "4,1 ₽",
+    "PriceChange": "-1,072 ₽",
+    "AnnualReturn": "36%",
+    "Risk": "43%",
+    "HalfYearReturn": "-14.837 %"
+  },
+  {
+    "Name": "Левенгук",
+    "Ticker": "LVHK",
+    "Price": "34,25 ₽",
+    "PriceChange": "-1,25 ₽",
+    "AnnualReturn": "111%",
+    "Risk": "57%",
+    "HalfYearReturn": "17.566 %"
+  },
+  {
+    "Name": "РуссНефть",
+    "Ticker": "RNFT",
+    "Price": "102,2 ₽",
+    "PriceChange": "-42,7 ₽",
+    "AnnualReturn": "34%",
+    "Risk": "62%",
+    "HalfYearReturn": "40.709 %"
+  },
+  {
+    "Name": "Уральская кузница",
+    "Ticker": "URKZ",
+    "Price": "25 400 ₽",
+    "PriceChange": "-2 100 ₽",
+    "AnnualReturn": "14%",
+    "Risk": "21%",
+    "HalfYearReturn": "3.297 %"
+  },
+  {
+    "Name": "Группа Астра",
+    "Ticker": "ASTR",
+    "Price": "442,65 ₽",
+    "PriceChange": "-70,85 ₽",
+    "AnnualReturn": null,
+    "Risk": "40%",
+    "HalfYearReturn": "17.282 %"
+  },
+  {
+    "Name": "Юнипро",
+    "Ticker": "UPRO",
+    "Price": "1,722 ₽",
+    "PriceChange": "0,173 ₽",
+    "AnnualReturn": "5%",
+    "Risk": "32%",
+    "HalfYearReturn": "-5.141 %"
+  },
+  {
+    "Name": "Fix Price",
+    "Ticker": "FIXP",
+    "Price": "215,4 ₽",
+    "PriceChange": "30,5 ₽",
+    "AnnualReturn": "-30%",
+    "Risk": "51%",
+    "HalfYearReturn": "-7.247 %"
+  },
+  {
+    "Name": "Генетико",
+    "Ticker": "GECO",
+    "Price": "26,44 ₽",
+    "PriceChange": "-3,98 ₽",
+    "AnnualReturn": "19%",
+    "Risk": "51%",
+    "HalfYearReturn": "-13.742 %"
+  },
+  {
+    "Name": "Дальневосточное морское пароходство (FESCO)",
+    "Ticker": "FESH",
+    "Price": "43,1 ₽",
+    "PriceChange": "-6 ₽",
+    "AnnualReturn": "6%",
+    "Risk": "56%",
+    "HalfYearReturn": "-12.4 %"
+  },
+  {
+    "Name": "Курганская генерирующая компания",
+    "Ticker": "KGKC",
+    "Price": "44,8 ₽",
+    "PriceChange": "0,2 ₽",
+    "AnnualReturn": "-7%",
+    "Risk": "33%",
+    "HalfYearReturn": "-14.488 %"
+  },
+  {
+    "Name": "Диасофт",
+    "Ticker": "DIAS",
+    "Price": "3733,5 ₽",
+    "PriceChange": "-893 ₽",
+    "AnnualReturn": null,
+    "Risk": null,
+    "HalfYearReturn": null
+  },
+  {
+    "Name": "ЮТЭйр АвиаКомп",
+    "Ticker": "UTAR",
+    "Price": "14,46 ₽",
+    "PriceChange": "-2,77 ₽",
+    "AnnualReturn": "66%",
+    "Risk": "51%",
+    "HalfYearReturn": "27.294 %"
+  },
+  {
+    "Name": "Мвидео",
+    "Ticker": "MVID",
+    "Price": "84,8 ₽",
+    "PriceChange": "-19,1 ₽",
+    "AnnualReturn": "-12%",
+    "Risk": "64%",
+    "HalfYearReturn": "0.358 %"
+  },
+  {
+    "Name": "Ставропольэнергосбыт",
+    "Ticker": "STSBP",
+    "Price": "3,55 ₽",
+    "PriceChange": "0,15 ₽",
+    "AnnualReturn": "39%",
+    "Risk": "27%",
+    "HalfYearReturn": "20.517 %"
+  },
+  {
+    "Name": "РусГидро",
+    "Ticker": "HYDR",
+    "Price": "0,484 ₽",
+    "PriceChange": "0,039 ₽",
+    "AnnualReturn": "-21%",
+    "Risk": "42%",
+    "HalfYearReturn": "-7.116 %"
+  },
+  {
+    "Name": "Россети Сибирь",
+    "Ticker": "MRKS",
+    "Price": "0,4295 ₽",
+    "PriceChange": "0,131 ₽",
+    "AnnualReturn": "71%",
+    "Risk": "60%",
+    "HalfYearReturn": "Московская биржа"
+  },
+  {
+    "Name": "Россети Волга",
+    "Ticker": "MRKV",
+    "Price": "0,0618 ₽",
+    "PriceChange": "—",
+    "AnnualReturn": "57%",
+    "Risk": "26%",
+    "HalfYearReturn": "22.302 %"
+  },
+  {
+    "Name": "Татнефть",
+    "Ticker": "TATN",
+    "Price": "566,2 ₽",
+    "PriceChange": "-25,8 ₽",
+    "AnnualReturn": "39%",
+    "Risk": "33%",
+    "HalfYearReturn": "-3.246 %"
+  },
+  {
+    "Name": "Банк ВТБ",
+    "Ticker": "VTBR",
+    "Price": "68,1 ₽",
+    "PriceChange": "-13,48 ₽",
+    "AnnualReturn": "-6%",
+    "Risk": "35%",
+    "HalfYearReturn": "-10.514 %"
+  },
+  {
+    "Name": "Инарктика",
+    "Ticker": "AQUA",
+    "Price": "565,5 ₽",
+    "PriceChange": "-52 ₽",
+    "AnnualReturn": "32%",
+    "Risk": "42%",
+    "HalfYearReturn": "-0.12 %"
+  },
+  {
+    "Name": "Россети Кубань",
+    "Ticker": "KUBE",
+    "Price": "150 ₽",
+    "PriceChange": "-3,6 ₽",
+    "AnnualReturn": "44%",
+    "Risk": "75%",
+    "HalfYearReturn": "11 %"
+  },
+  {
+    "Name": "КуйбышевАзот",
+    "Ticker": "KAZTP",
+    "Price": "429 ₽",
+    "PriceChange": "-23,5 ₽",
+    "AnnualReturn": "-10%",
+    "Risk": "45%",
+    "HalfYearReturn": "-10.321 %"
+  },
+  {
+    "Name": "ТНС энерго Нижний Новгород",
+    "Ticker": "NNSBP",
+    "Price": "1176 ₽",
+    "PriceChange": "-44 ₽",
+    "AnnualReturn": "36%",
+    "Risk": "51%",
+    "HalfYearReturn": "-11.19 %"
+  },
+  {
+    "Name": "Акрон",
+    "Ticker": "AKRN",
+    "Price": "17 184 ₽",
+    "PriceChange": "184 ₽",
+    "AnnualReturn": "-17%",
+    "Risk": "21%",
+    "HalfYearReturn": "-16.711 %"
+  },
+  {
+    "Name": "ВСМПО-Ависма",
+    "Ticker": "VSMO",
+    "Price": "22 340 ₽",
+    "PriceChange": "-2 700 ₽",
+    "AnnualReturn": "-32%",
+    "Risk": "50%",
+    "HalfYearReturn": "0.359 %"
+  },
+  {
+    "Name": "Курганская генерирующая компания",
+    "Ticker": "KGKCP",
+    "Price": "47,8 ₽",
+    "PriceChange": "-1,2 ₽",
+    "AnnualReturn": "-7%",
+    "Risk": "21%",
+    "HalfYearReturn": "23.182 %"
+  },
+  {
+    "Name": "МТС",
+    "Ticker": "MTSS",
+    "Price": "174,2 ₽",
+    "PriceChange": "-29,55 ₽",
+    "AnnualReturn": "-16%",
+    "Risk": "48%",
+    "HalfYearReturn": "18.11 %"
+  },
+  {
+    "Name": "Варьеганнефтегаз",
+    "Ticker": "VJGZ",
+    "Price": "2185 ₽",
+    "PriceChange": "-120 ₽",
+    "AnnualReturn": "59%",
+    "Risk": "49%",
+    "HalfYearReturn": "36.588 %"
+  },
+  {
+    "Name": "ТНС энерго Кубань",
+    "Ticker": "KBSB",
+    "Price": "415 ₽",
+    "PriceChange": "-4 ₽",
+    "AnnualReturn": "75%",
+    "Risk": "51%",
+    "HalfYearReturn": "-2.188 %"
+  },
+  {
+    "Name": "Henderson",
+    "Ticker": "HNFG",
+    "Price": "566 ₽",
+    "PriceChange": "-31 ₽",
+    "AnnualReturn": null,
+    "Risk": "35%",
+    "HalfYearReturn": "23.857 %"
+  },
+  {
+    "Name": "Группа ЛСР",
+    "Ticker": "LSRG",
+    "Price": "724,4 ₽",
+    "PriceChange": "-21,4 ₽",
+    "AnnualReturn": "-11%",
+    "Risk": "48%",
+    "HalfYearReturn": "19.866 %"
+  },
+  {
+    "Name": "Магнитогорский металлургический комбинат (ММК)",
+    "Ticker": "MAGN",
+    "Price": "32,7 ₽",
+    "PriceChange": "-6,13 ₽",
+    "AnnualReturn": "17%",
+    "Risk": "48%",
+    "HalfYearReturn": "6.133 %"
+  },
+  {
+    "Name": "Роснефть НК",
+    "Ticker": "ROSN",
+    "Price": "491,05 ₽",
+    "PriceChange": "0,45 ₽",
+    "AnnualReturn": "17%",
+    "Risk": "28%",
+    "HalfYearReturn": "-6.063 %"
+  },
+  {
+    "Name": "Абрау-Дюрсо",
+    "Ticker": "ABRD",
+    "Price": "174,8 ₽",
+    "PriceChange": "-33 ₽",
+    "AnnualReturn": "-20%",
+    "Risk": "49%",
+    "HalfYearReturn": "-2.731 %"
+  },
+  {
+    "Name": "МОЭСК",
+    "Ticker": "MSRS",
+    "Price": "1,1035 ₽",
+    "PriceChange": "0,038 ₽",
+    "AnnualReturn": "9%",
+    "Risk": "29%",
+    "HalfYearReturn": "0.392 %"
+  },
+  {
+    "Name": "ОКЕЙ",
+    "Ticker": "OKEY",
+    "Price": "22,5 ₽",
+    "PriceChange": "-2,7 ₽",
+    "AnnualReturn": "-12%",
+    "Risk": "38%",
+    "HalfYearReturn": "-5.45 %"
+  },
+  {
+    "Name": "Ковровский механический завод",
+    "Ticker": "KMEZ",
+    "Price": "1100 ₽",
+    "PriceChange": "-132 ₽",
+    "AnnualReturn": "4%",
+    "Risk": "52%",
+    "HalfYearReturn": "-6.045 %"
+  },
+  {
+    "Name": "Нижнекамскнефтехим",
+    "Ticker": "NKNCP",
+    "Price": "65,26 ₽",
+    "PriceChange": "-3,7 ₽",
+    "AnnualReturn": "-15%",
+    "Risk": "22%",
+    "HalfYearReturn": "-3.824 %"
+  },
+  {
+    "Name": "Транснефть — Привилегированные",
+    "Ticker": "TRNFP",
+    "Price": "979,5 ₽",
+    "PriceChange": "-384,5 ₽",
+    "AnnualReturn": "-99%",
+    "Risk": "99%",
+    "HalfYearReturn": "-98.909 %"
+  },
+  {
+    "Name": "ТНС энерго Марий Эл",
+    "Ticker": "MISBP",
+    "Price": "43,3 ₽",
+    "PriceChange": "-4,6 ₽",
+    "AnnualReturn": "43%",
+    "Risk": "60%",
+    "HalfYearReturn": "5.228 %"
+  },
+  {
+    "Name": "ТГК-2",
+    "Ticker": "TGKBP",
+    "Price": "0,0101 ₽",
+    "PriceChange": "0,003 ₽",
+    "AnnualReturn": "55%",
+    "Risk": "60%",
+    "HalfYearReturn": "32.582 %"
+  },
+  {
+    "Name": "НПК ОВК",
+    "Ticker": "UWGN",
+    "Price": "46,6 ₽",
+    "PriceChange": "-11,8 ₽",
+    "AnnualReturn": "-76%",
+    "Risk": "54%",
+    "HalfYearReturn": "0.854 %"
+  },
+  {
+    "Name": "Коршуновский горно-обогатительный комбинат",
+    "Ticker": "KOGK",
+    "Price": "35 600 ₽",
+    "PriceChange": "-4 000 ₽",
+    "AnnualReturn": "4%",
+    "Risk": "43%",
+    "HalfYearReturn": "-11.765 %"
+  },
+  {
+    "Name": "Владимирский Химический Завод",
+    "Ticker": "VLHZ",
+    "Price": "193,8 ₽",
+    "PriceChange": "20,2 ₽",
+    "AnnualReturn": "18%",
+    "Risk": "51%",
+    "HalfYearReturn": "-6.32 %"
+  },
+  {
+    "Name": "ФСК ЕЭС",
+    "Ticker": "FEES",
+    "Price": "0,07148 ₽",
+    "PriceChange": "0,009 ₽",
+    "AnnualReturn": "6%",
+    "Risk": "49%",
+    "HalfYearReturn": "-3.005 %"
+  },
+  {
+    "Name": "Наука-Связь",
+    "Ticker": "NSVZ",
+    "Price": "290,5 ₽",
+    "PriceChange": "-31 ₽",
+    "AnnualReturn": "75%",
+    "Risk": "57%",
+    "HalfYearReturn": "-14.086 %"
+  },
+  {
+    "Name": "Циан",
+    "Ticker": "CIAN",
+    "Price": "504,4 ₽",
+    "PriceChange": "-100,6 ₽",
+    "AnnualReturn": "14%",
+    "Risk": "52%",
+    "HalfYearReturn": "29.962 %"
+  },
+  {
+    "Name": "Звезда СПб",
+    "Ticker": "ZVEZ",
+    "Price": "7,12 ₽",
+    "PriceChange": "0,99 ₽",
+    "AnnualReturn": "58%",
+    "Risk": "54%",
+    "HalfYearReturn": "-1.455 %"
+  },
+  {
+    "Name": "Татнефть",
+    "Ticker": "TATNP",
+    "Price": "565,5 ₽",
+    "PriceChange": "-27 ₽",
+    "AnnualReturn": "36%",
+    "Risk": "32%",
+    "HalfYearReturn": "-6.084 %"
+  },
+  {
+    "Name": "Казаньоргсинтез",
+    "Ticker": "KZOS",
+    "Price": "74,3 ₽",
+    "PriceChange": "-5,4 ₽",
+    "AnnualReturn": "-15%",
+    "Risk": "43%",
+    "HalfYearReturn": "-4.428 %"
+  },
+  {
+    "Name": "Сахалинэнерго",
+    "Ticker": "SLEN",
+    "Price": "3,165 ₽",
+    "PriceChange": "0,575 ₽",
+    "AnnualReturn": "-7%",
+    "Risk": "51%",
+    "HalfYearReturn": "-19.906 %"
+  },
+  {
+    "Name": "Нижнекамскнефтехим",
+    "Ticker": "NKNC",
+    "Price": "84,1 ₽",
+    "PriceChange": "-1,65 ₽",
+    "AnnualReturn": "-25%",
+    "Risk": "36%",
+    "HalfYearReturn": "-10.338 %"
+  },
+  {
+    "Name": "Таттелеком",
+    "Ticker": "TTLK",
+    "Price": "0,615 ₽",
+    "PriceChange": "0,056 ₽",
+    "AnnualReturn": "23%",
+    "Risk": "49%",
+    "HalfYearReturn": "-10.07 %"
+  },
+  {
+    "Name": "Россети Северный Кавказ",
+    "Ticker": "MRKK",
+    "Price": "16,58 ₽",
+    "PriceChange": "0,7 ₽",
+    "AnnualReturn": "25%",
+    "Risk": "50%",
+    "HalfYearReturn": "-9.614 %"
+  },
+  {
+    "Name": "ИНГРАД",
+    "Ticker": "OPIN",
+    "Price": "1758 ₽",
+    "PriceChange": "84 ₽",
+    "AnnualReturn": "-0%",
+    "Risk": "30%",
+    "HalfYearReturn": "-8.203 %"
+  },
+  {
+    "Name": "Южный Кузбасс",
+    "Ticker": "UKUZ",
+    "Price": "1102 ₽",
+    "PriceChange": "-82 ₽",
+    "AnnualReturn": "-6%",
+    "Risk": "43%",
+    "HalfYearReturn": "-12.454 %"
+  },
+  {
+    "Name": "Химпром",
+    "Ticker": "HIMCP",
+    "Price": "18,34 ₽",
+    "PriceChange": "-3,1 ₽",
+    "AnnualReturn": "1%",
+    "Risk": "54%",
+    "HalfYearReturn": "-10.109 %"
+  },
+  {
+    "Name": "ЛУКОЙЛ",
+    "Ticker": "LKOH",
+    "Price": "6973 ₽",
+    "PriceChange": "-49,5 ₽",
+    "AnnualReturn": "40%",
+    "Risk": "25%",
+    "HalfYearReturn": "6.442 %"
+  },
+  {
+    "Name": "Делимобиль",
+    "Ticker": "DELI",
+    "Price": "167,55 ₽",
+    "PriceChange": "-47,8 ₽",
+    "AnnualReturn": null,
+    "Risk": "53%",
+    "HalfYearReturn": "Московская биржа"
+  },
+  {
+    "Name": "Московская биржа",
+    "Ticker": "MOEX",
+    "Price": "183,89 ₽",
+    "PriceChange": "-32,93 ₽",
+    "AnnualReturn": "84%",
+    "Risk": "29%",
+    "HalfYearReturn": "19.047 %"
+  },
+  {
+    "Name": "МРСК Северо-Запада",
+    "Ticker": "MRKZ",
+    "Price": "0,0443 ₽",
+    "PriceChange": "0,013 ₽",
+    "AnnualReturn": "107%",
+    "Risk": "62%",
+    "HalfYearReturn": "-10.683 %"
+  },
+  {
+    "Name": "РКК Энергия",
+    "Ticker": "RKKE",
+    "Price": "15 190 ₽",
+    "PriceChange": "-3 020 ₽",
+    "AnnualReturn": "54%",
+    "Risk": "57%",
+    "HalfYearReturn": "-12.016 %"
+  },
+  {
+    "Name": "ФосАгро",
+    "Ticker": "PHOR",
+    "Price": "5602 ₽",
+    "PriceChange": "127 ₽",
+    "AnnualReturn": "-20%",
+    "Risk": "30%",
+    "HalfYearReturn": "-9.658 %"
+  },
+  {
+    "Name": "ЭН+ ГРУП",
+    "Ticker": "ENPG",
+    "Price": "302,15 ₽",
+    "PriceChange": "-32,35 ₽",
+    "AnnualReturn": "-7%",
+    "Risk": "46%",
+    "HalfYearReturn": "-3.615 %"
+  },
+  {
+    "Name": "Волгоградэнергосбыт",
+    "Ticker": "VGSBP",
+    "Price": "8,36 ₽",
+    "PriceChange": "0,68 ₽",
+    "AnnualReturn": "68%",
+    "Risk": "49%",
+    "HalfYearReturn": "-5.479 %"
+  },
+  {
+    "Name": "Приморье АКБ",
+    "Ticker": "PRMB",
+    "Price": "27 600 ₽",
+    "PriceChange": "-1 600 ₽",
+    "AnnualReturn": "-13%",
+    "Risk": "45%",
+    "HalfYearReturn": "-4.167 %"
+  },
+  {
+    "Name": "Лензолото",
+    "Ticker": "LNZLP",
+    "Price": "1645 ₽",
+    "PriceChange": "-235 ₽",
+    "AnnualReturn": "-20%",
+    "Risk": "50%",
+    "HalfYearReturn": "-0.2 %"
+  }
+]

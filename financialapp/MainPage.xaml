@@ -1,102 +1,125 @@
 ﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="financialapp.MainPage">
-    <ScrollView>
-        <AbsoluteLayout>
-        <!-- Основной контент -->
-        <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
-                     AbsoluteLayout.LayoutFlags="All"
-                     Padding="20">
+             x:Class="financialapp.MainPage"
+             BackgroundColor="#F5F5F5">
 
-            <ImageButton 
-                x:Name="MenuButton"
-                Source="dots.png"
-                HeightRequest="40"
-                WidthRequest="40"
-                HorizontalOptions="Start"
-                Clicked="OnMenuButtonClicked"/>
+    <Grid RowDefinitions="Auto, *, Auto" Padding="10">
 
-            <Entry x:Name="MainEntry" 
-                   Placeholder="Введите желаемую сумму вклада"
-                   Margin="0,10"/>
-            <Entry x:Name="Time"
-                   Placeholder="Введите желаемое время удержания вклада"
-                   Margin="0, 10"/>
+        <!-- Вклады -->
 
-            <Button x:Name="AnalyzeButton" 
-                    Text="Анализировать"
-                    HeightRequest="50"
-                    WidthRequest="200"
-                    Margin="0,10"
-                    Clicked="OnFinancialAnalysisClicked"/>
+        <Label x:Name="PageTitle" 
+               Text="Вклады" 
+               FontSize="24" 
+               FontAttributes="Bold" 
+               HorizontalOptions="Center" 
+               VerticalOptions="Start" 
+               TextColor="Black" />
+        
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout>
+                <VerticalStackLayout x:Name="BankPanel" IsVisible="True">
+                    <Frame x:Name="BankChartFrame" HeightRequest="150" BackgroundColor="White" CornerRadius="20">
+                        <Label Text="График вкладов" HorizontalOptions="Center" VerticalOptions="Center" />
+                    </Frame>
+                    <VerticalStackLayout x:Name="BankList" Spacing="20">
+                        
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
 
-            <!-- Контейнер для результатов анализа -->
-            <Frame x:Name="ResultsFrame" 
-                   IsVisible="{Binding IsResultsVisible}"
-                   Padding="5"
-                   Margin="0,10"
-                   BackgroundColor="LightGray">
-                <ScrollView>
-                    <Grid x:Name="ResultsGrid" Padding="5" BackgroundColor="White" Margin="10,0,0,5">
-                        <!-- Динамическое добавление строк и столбцов будет происходить в коде -->
-                    </Grid>
-                </ScrollView>
+                <!-- Паи -->
+                <VerticalStackLayout x:Name="MutualFundsPanel" IsVisible="False">
+                    <Frame x:Name="MutualFundsChartFrame" HeightRequest="150" BackgroundColor="White" CornerRadius="20">
+                        <Label Text="График паев" HorizontalOptions="Center" VerticalOptions="Center" />
+                    </Frame>
+                    <VerticalStackLayout x:Name="MutualFundsList" Spacing="20">
+                        
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+
+                <!-- Металлы -->
+                <VerticalStackLayout x:Name="MetalsPanel" IsVisible="False">
+                    <Frame x:Name="MetalsChartFrame" HeightRequest="150" BackgroundColor="White" CornerRadius="20">
+                        <Label Text="График металлов" HorizontalOptions="Center" VerticalOptions="Center" />
+                    </Frame>
+                    <VerticalStackLayout x:Name="MetalsList" Spacing="20">
+                        
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+
+                <!-- Валюты -->
+                <VerticalStackLayout x:Name="CurrencyPanel" IsVisible="False">
+                    <Frame x:Name="CurrencyChartFrame" HeightRequest="150" BackgroundColor="White" CornerRadius="20">
+                        <Label Text="График валют" HorizontalOptions="Center" VerticalOptions="Center" />
+                    </Frame>
+                    <VerticalStackLayout x:Name="CurrencyList" Spacing="20">
+                        
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+
+                <!-- Акции -->
+                <VerticalStackLayout x:Name="SharesPanel" IsVisible="False">
+                    <Frame x:Name="SharesChartFrame" HeightRequest="150" BackgroundColor="White" CornerRadius="20">
+                        <Label Text="График акций" HorizontalOptions="Center" VerticalOptions="Center" />
+                    </Frame>
+                    <VerticalStackLayout x:Name="SharesList" Spacing="20">
+                        
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+                
+            </VerticalStackLayout>
+        </ScrollView>
+        <!-- Грид (низ с кнопками) -->
+        <Grid x:Name="DownGrid" Grid.Row="2" ColumnDefinitions="*,*,*,*,*" HeightRequest="75" BackgroundColor="#E0E0E0" VerticalOptions="End" Padding="10" ColumnSpacing="5">
+
+            <!-- Вклады -->
+            <Frame Grid.Column="0" CornerRadius="10" BackgroundColor="White" WidthRequest="65" HeightRequest="65" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label Text="Вклады" FontSize="6" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center" />
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnDepositsClicked" />
+                </Frame.GestureRecognizers>
             </Frame>
+            
+            <!-- Акции -->
+            <Frame Grid.Column="1" CornerRadius="10" BackgroundColor="White" WidthRequest="65" HeightRequest="65" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label Text="Акции" FontSize="6" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center" />
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnSharesClicked" />
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <!-- Паи -->
+            <Frame Grid.Column="2" CornerRadius="10" BackgroundColor="White" WidthRequest="65" HeightRequest="65" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label Text="Паи" FontSize="6" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center" />
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnMutualFundsClicked" />
+                </Frame.GestureRecognizers>
+            </Frame>
+            
+            <!-- Металлы -->
+            <Frame Grid.Column="4" CornerRadius="10" BackgroundColor="White" WidthRequest="65" HeightRequest="65" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label Text="Металлы" FontSize="6" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center" />
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnMetalsClicked" />
+                </Frame.GestureRecognizers>
+            </Frame>
+            
+            <!-- Валюта -->
+            <Frame Grid.Column="3" CornerRadius="10" BackgroundColor="White" WidthRequest="65" HeightRequest="65" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label Text="Валюта" FontSize="6" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center" />
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnCurrencyClicked" />
+                </Frame.GestureRecognizers>
+            </Frame>
+
+        </Grid>
+        
+        <!-- Панель с инпутами и кнопкой можно удалить и создать отдельный пейдж -->
+        <StackLayout x:Name="InputPanel" Grid.Row="1" Padding="20" Spacing="20" IsVisible="True">
+            <Entry Placeholder="Введите сумму в рублях" Keyboard="Numeric" BackgroundColor="White" TextColor="Black" />
+            <Entry Placeholder="Введите длительность в днях" Keyboard="Numeric" BackgroundColor="White" TextColor="Black" />
+            <Button Text="Продолжить" BackgroundColor="#6200EE" TextColor="White" Clicked="Button_Clicked" IsEnabled="True" />
         </StackLayout>
+        
+    </Grid>
 
-        <!-- Полупрозрачный фон для меню -->
-        <BoxView x:Name="MenuBackground"
-                 AbsoluteLayout.LayoutBounds="0,0,1,1"
-                 AbsoluteLayout.LayoutFlags="All"
-                 BackgroundColor="#80000000"
-                 IsVisible="false">
-
-            <BoxView.GestureRecognizers>
-                <TapGestureRecognizer Tapped="OnBackgroundTapped"/>
-            </BoxView.GestureRecognizers>
-        </BoxView>
-
-        <!-- Контекстное меню -->
-        <Frame x:Name="ContextMenu"
-               AbsoluteLayout.LayoutBounds="0,0,250,AutoSize"
-               AbsoluteLayout.LayoutFlags="PositionProportional"
-               BackgroundColor="White"
-               Padding="0"
-               Margin="10,10,0,0"
-               HasShadow="True"
-               IsVisible="false"
-               CornerRadius="10">
-            <StackLayout Spacing="0">
-                <Label Text="Меню" 
-                       FontSize="20" 
-                       FontAttributes="Bold"
-                       Padding="15"/>
-                <Line Height="1" 
-                      BackgroundColor="#e0e0e0"/>
-
-                <Button Text="Финансовый анализ"
-                        BackgroundColor="Transparent"
-                        TextColor="Black"
-                        Padding="15"
-                        Clicked="OnFinancialAnalysisClicked"/>
-                <Line Height="1" 
-                      BackgroundColor="#e0e0e0"/>
-
-                <Button Text="Исходные данные"
-                        BackgroundColor="Transparent"
-                        TextColor="Black"
-                        Padding="15"
-                        Clicked="OnInitialDataClicked"/>
-                <Line Height="1" 
-                      BackgroundColor="#e0e0e0"/>
-
-                <Button Text="Графики доходности"
-                        BackgroundColor="Transparent"
-                        TextColor="Black"
-                        Padding="15"
-                        Clicked="OnProfitChartsClicked"/>
-            </StackLayout>
-        </Frame>
-    </AbsoluteLayout>
-    </ScrollView>
 </ContentPage>
