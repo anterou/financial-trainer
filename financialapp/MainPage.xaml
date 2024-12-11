@@ -39,7 +39,7 @@
                 <!-- Металлы -->
                 <VerticalStackLayout x:Name="MetalsPanel" IsVisible="False">
                     <Frame x:Name="MetalsChartFrame" HeightRequest="150" BackgroundColor="White" CornerRadius="20">
-                        <Label Text="График металлов" HorizontalOptions="Center" VerticalOptions="Center" />
+                        <Label Text="График металлов" HorizontalOptions="Center" VerticalOptions="Center"  />
                     </Frame>
                     <VerticalStackLayout x:Name="MetalsList" Spacing="20">
                         
@@ -97,7 +97,7 @@
             
             <!-- Металлы -->
             <Frame Grid.Column="4" CornerRadius="10" BackgroundColor="White" WidthRequest="65" HeightRequest="65" HorizontalOptions="Center" VerticalOptions="Center">
-                <Label Text="Металлы" FontSize="6" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center" />
+                <Label Text="Металлы" FontSize="6" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center" LineBreakMode="NoWrap"  />
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnMetalsClicked" />
                 </Frame.GestureRecognizers>
